@@ -1,0 +1,11 @@
+body {
+    padding-top: 160px;
+}
+.headerDivider {
+   border-left: thick solid #ff0000;
+}
+
+.navfix {
+	background: white;
+    height: 112px;
+}
