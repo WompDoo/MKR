@@ -7,6 +7,7 @@
 html,
 body {
     height: 100%;
+    overflow-x: hidden;
 }
 
 .navsep {
@@ -20,10 +21,55 @@ body {
     display: inline-block;
     float: none;
     vertical-align: top;
+    background-color: rgba(220, 220, 220, .6);
 }
 
 .navbar .navbar-collapse {
     text-align: center;
+}
+
+.navbar-toggle{
+    width: 100%;
+    float: none;
+    border: none;
+    background-color: rgba(220, 220, 220, .6);
+}
+
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+    background-color: rgba(220, 220, 220, .8);
+    border: none;
+    font-weight: bold;
+}
+
+.navbar-lang {
+    margin-top: -14%;
+    display: inline-flex;
+    float: right;
+}
+
+.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+     margin-right: 0;
+     margin-left: 0;
+}
+
+.navbar-collapse .collapse .in {
+z-index: 1;
+}
+
+.nav .navbar-lang > li > a {
+    color: #000000;
+    background: none;
+    padding: 10px 10px;
+    font-size: 10px;
+}
+
+.nav .navbar-lang > li > a:hover {
+    font-weight: bold;
+}
+
+.nav .navbar-lang > li > a.active {
+    color: #36261B;
+    font-weight: bold;
 }
 
 .nav > li > a {
@@ -39,6 +85,8 @@ body {
 
 .navbar-brand {
     float: none;
+    width: 150px;
+    height: 150px;
 }
 
 .navbar-inverse {
@@ -48,6 +96,11 @@ body {
 
 .navbar-inverse .navbar-nav > li > a {
     color: #000000;
+}
+
+.navbar-inverse .navbar-nav > li > a.active {
+    color: #36261B;
+    font-weight: bold;
 }
 
 .carousel,
@@ -72,9 +125,23 @@ body {
     -o-background-size: cover;
 }
 
+.socialborder {
+    border: 1px;
+    border-style: solid;
+    border-right: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+}
+
+.group-social {
+    float: right;
+}
+
+
 .footer {
     position: absolute;
     bottom: 0;
+    margin-bottom: 1%;
     width: 100%;
     /* Set the fixed height of the footer here */
 }
