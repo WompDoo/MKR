@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>MKR</title>
+    <title>MKR Kild | Contact Us</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -31,24 +31,52 @@
 
 
 <!-- Navigation -->
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-inverse navbar-fixed-top navfix" role="navigation">
     <div class="container navfix">
+
+        <div id="mobileNav">
+            <div class="wrapper">
+                <nav class="mobileNav">
+                    <ul class="nav text-center">
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="furniture.html">Furniture</a>
+                        </li>
+                        <li>
+                            <a href="sketchbooks.html">Sketchbooks</a>
+                        </li>
+                        <li>
+                            <a href="woodturning.html">Woodturning</a>
+                        </li>
+                        <li>
+                            <a href="about.html">About</a>
+                        </li>
+                        <li>
+                            <a class="active" href="#">Contact</a>
+                        </li>
+                        <li>
+                            <a href="cart.html">Shopping Cart</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div id="mobileMenuLink" class="text-center">
+            <a>Menu</a>
+        </div>
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.html">MKR</a>
+            <a href="#"><img src="./img/logo.png" class="navbar-brand"/></a>
             <div class="text-right" style="padding-right: 100px">
-
-            <a href="cart.html" style="font-size:30px; position: absolute;">
-                    <span class="glyphicon glyphicon-lock"></span>
-                </a>
+                <div class="shopping-cart">
+                    <a href="cart.html" style="position: relative">
+                        <img src="./img/shoppingcart.png" width="35" height="35"/>
+                    </a>
                 </div>
+
+            </div>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -60,10 +88,10 @@
                     <a href="furniture.html">Furniture</a>
                 </li>
                 <li>
-                    <a href="furniture.html">Sketchbooks</a>
+                    <a href="sketchbooks.html">Sketchbooks</a>
                 </li>
                 <li>
-                    <a href="furniture.html">Woodturning</a>
+                    <a href="woodturning.html">Woodturning</a>
                 </li>
                 <li>
                     <a href="about.html">About</a>
@@ -185,6 +213,7 @@
 
 <!-- jQuery -->
 <script src="js/jquery.js"></script>
+<script src="js/main.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>

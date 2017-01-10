@@ -30,9 +30,9 @@
 <body>
 
 <!-- Navigation -->
-<nav class="navbar navbar-inverse navbar-fixed-top navfix" role="navigation">
-    <div class="container navfix">
-
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
         <div id="mobileNav">
             <div class="wrapper">
                 <nav class="mobileNav">
@@ -41,13 +41,13 @@
                             <a href="index.html">Home</a>
                         </li>
                         <li>
-                            <a href="#" class="active">Furniture</a>
+                            <a  href="furniture.html">Furniture</a>
                         </li>
                         <li>
-                            <a href="furniture.html">Sketchbooks</a>
+                            <a href="sketchbooks.html">Sketchbooks</a>
                         </li>
                         <li>
-                            <a href="furniture.html">Woodturning</a>
+                            <a href="#" class="active">Woodturning</a>
                         </li>
                         <li>
                             <a href="about.html">About</a>
@@ -65,32 +65,43 @@
         <div id="mobileMenuLink" class="text-center">
             <a>Menu</a>
         </div>
-        <!-- Brand and toggle get grouped for better mobile display -->
+
         <div class="navbar-header">
             <a href="#"><img src="./img/logo.png" class="navbar-brand"/></a>
-            <div class="text-right" style="padding-right: 100px">
-                <div class="shopping-cart">
-                    <a href="cart.html" style="position: relative">
-                    <img src="./img/shoppingcart.png" width="35" height="35"/>
+            <div class="nav languages">
+                <ul class="nav navbar-lang">
+                    <li>
+                        <a href="#">EST</a>
+                    </li>
+                    <li>
+                        <a class="active" href="#">EN</a>
+                    </li>
+                    <li>
+                        <a href="#">RUS</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="shopping-cart">
+                <a href="cart.html" style="position: relative">
+                    <img src="./img/shoppingcart.png" width="35" height="35" />
                 </a>
-                </div>
-
             </div>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav text-center">
                 <li>
-                    <a href="index.html">Home</a>
+                    <a  href="index.html">Home</a>
                 </li>
                 <li>
-                    <a class="active" href="#">Furniture</a>
+                    <a href="furniture.html">Furniture</a>
                 </li>
                 <li>
-                    <a href="furniture.html">Sketchbooks</a>
+                    <a href="sketchbooks.html">Sketchbooks</a>
                 </li>
                 <li>
-                    <a href="furniture.html">Woodturning</a>
+                    <a class="active" href="#">Woodturning</a>
                 </li>
                 <li>
                     <a href="about.html">About</a>
@@ -105,6 +116,7 @@
     </div>
     <!-- /.container -->
 </nav>
+
 
 <!-- Page Features -->
 <div class="row">
@@ -171,7 +183,6 @@
 
 <!-- jQuery -->
 <script src="js/jquery.js"></script>
-<script src="js/main.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>

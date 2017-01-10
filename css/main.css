@@ -10,30 +10,43 @@ body {
     overflow-x: hidden;
 }
 
-.navsep {
-    width: 90%;
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+.navbar-brand {
+    float: none;
+    width: 175px;
+    height: 175px;
 }
+
+.layer {
+    background-color: rgba(220, 220, 220, .6);
+    height: 40px;
+    width: 40px;
+    border-radius: 30px;
+}
+
+.shopping-cart {
+ padding-right: 95px;
+    float: right;
+}
+
+.navsep {
+width: 90%;
+border: 0;
+height: 1px;
+background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
 
 .navbar .navbar-nav {
     display: inline-block;
     float: none;
     vertical-align: top;
-    background-color: rgba(220, 220, 220, .6);
+    background-color: rgba(220, 220, 220, .7);
 }
 
 .navbar .navbar-collapse {
     text-align: center;
 }
 
-.navbar-toggle{
-    width: 100%;
-    float: none;
-    border: none;
-    background-color: rgba(220, 220, 220, .6);
-}
 
 .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
     background-color: rgba(220, 220, 220, .8);
@@ -45,15 +58,6 @@ body {
     margin-top: -14%;
     display: inline-flex;
     float: right;
-}
-
-.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
-     margin-right: 0;
-     margin-left: 0;
-}
-
-.navbar-collapse .collapse .in {
-z-index: 1;
 }
 
 .nav .navbar-lang > li > a {
@@ -81,12 +85,6 @@ z-index: 1;
     padding: 15px;
     text-align: center;
     width: 100%;
-}
-
-.navbar-brand {
-    float: none;
-    width: 150px;
-    height: 150px;
 }
 
 .navbar-inverse {
@@ -135,8 +133,9 @@ z-index: 1;
 
 .group-social {
     float: right;
+    display: flex;
+    margin-right: 5;
 }
-
 
 .footer {
     position: absolute;
@@ -144,4 +143,73 @@ z-index: 1;
     margin-bottom: 1%;
     width: 100%;
     /* Set the fixed height of the footer here */
+}
+
+#mobileNav, #mobileNav .subnav {
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    -webkit-transition: max-height, .3s;
+    -moz-transition: max-height, .3s;
+    -o-transition: max-height, .3s;
+    transition: max-height, .3s;
+}
+
+#mobileMenuLink {
+    display: none;
+    visibility: hidden;
+    margin: 15px 0 0;
+}
+
+@media only screen and (max-width: 640px) {
+
+    .shopping-cart {
+        visibility: hidden;
+    }
+
+    .layer {
+        visibility: hidden;
+    }
+
+    #mobileNav {
+        background-color: #ffffff;
+        margin-top: 0;
+    }
+
+    #mobileNav .wrapper {
+        border-bottom-width: 2px;
+    }
+
+    .nav > li > a {
+        color: black;
+        border-bottom-color: black;
+    }
+
+    @media only screen and (max-width: 640px) {
+        #mobileNav .wrapper {
+            padding: 1em 0;
+            border-bottom-style: solid;
+            border-bottom-color: rgba(0, 0, 0, .1);
+        }
+    }
+
+    #mobileMenuLink {
+        margin: 0;
+        display: block;
+        font-size: 14px;
+        line-height: 1.6em;
+        letter-spacing: 1px;
+        font-style: normal;
+        padding: 5px 5px 5px;
+        background-color: #ffffff;
+        border-bottom-style: solid;
+        border-bottom: 1px;
+        border-bottom-color: rgba(0, 0, 0, .1);
+        text-align: center;
+        visibility: visible;
+    }
+
+    #mobileMenuLink > a {
+        color: black;
+    }
 }
