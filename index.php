@@ -40,22 +40,22 @@
                             <a class="active" href="#">Home</a>
                         </li>
                         <li>
-                            <a href="furniture.html">Furniture</a>
+                            <a href="furniture.php">Furniture</a>
                         </li>
                         <li>
-                            <a href="furniture.html">Sketchbooks</a>
+                            <a href="furniture.php">Sketchbooks</a>
                         </li>
                         <li>
-                            <a href="furniture.html">Woodturning</a>
+                            <a href="furniture.php">Woodturning</a>
                         </li>
                         <li>
-                            <a href="about.html">About</a>
+                            <a href="about.php">About</a>
                         </li>
                         <li>
-                            <a href="contact.html">Contact</a>
+                            <a href="contact.php">Contact</a>
                         </li>
                         <li>
-                            <a href="cart.html">Shopping Cart</a>
+                            <a href="cart.php">Shopping Cart</a>
                         </li>
                     </ul>
                 </nav>
@@ -81,7 +81,7 @@
                 </ul>
             </div>
             <div class="shopping-cart">
-                <div class="layer"><a href="cart.html" style="position: relative">
+                <div class="layer"><a href="cart.php" style="position: relative">
                     <img src="./img/shoppingcart.png" width="35" height="35"/>
                 </a>
                 </div>
@@ -95,19 +95,19 @@
                     <a class="active" href="#">Home</a>
                 </li>
                 <li>
-                    <a href="furniture.html">Furniture</a>
+                    <a href="furniture.php">Furniture</a>
                 </li>
                 <li>
-                    <a href="furniture.html">Sketchbooks</a>
+                    <a href="furniture.php">Sketchbooks</a>
                 </li>
                 <li>
-                    <a href="furniture.html">Woodturning</a>
+                    <a href="furniture.php">Woodturning</a>
                 </li>
                 <li>
-                    <a href="about.html">About</a>
+                    <a href="about.php">About</a>
                 </li>
                 <li>
-                    <a href="contact.html">Contact</a>
+                    <a href="contact.php">Contact</a>
                 </li>
             </ul>
         </div>

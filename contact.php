@@ -1,3 +1,6 @@
+<?php include("header.php"); ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,84 +31,6 @@
 </head>
 
 <body>
-
-
-<!-- Navigation -->
-<nav class="navbar navbar-inverse navbar-fixed-top navfix" role="navigation">
-    <div class="container navfix">
-
-        <div id="mobileNav">
-            <div class="wrapper">
-                <nav class="mobileNav">
-                    <ul class="nav text-center">
-                        <li>
-                            <a href="index.html">Home</a>
-                        </li>
-                        <li>
-                            <a href="furniture.html">Furniture</a>
-                        </li>
-                        <li>
-                            <a href="sketchbooks.html">Sketchbooks</a>
-                        </li>
-                        <li>
-                            <a href="woodturning.html">Woodturning</a>
-                        </li>
-                        <li>
-                            <a href="about.html">About</a>
-                        </li>
-                        <li>
-                            <a class="active" href="#">Contact</a>
-                        </li>
-                        <li>
-                            <a href="cart.html">Shopping Cart</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <div id="mobileMenuLink" class="text-center">
-            <a>Menu</a>
-        </div>
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <a href="#"><img src="./img/logo.png" class="navbar-brand"/></a>
-            <div class="text-right" style="padding-right: 100px">
-                <div class="shopping-cart">
-                    <a href="cart.html" style="position: relative">
-                        <img src="./img/shoppingcart.png" width="35" height="35"/>
-                    </a>
-                </div>
-
-            </div>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav text-center">
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li>
-                    <a href="furniture.html">Furniture</a>
-                </li>
-                <li>
-                    <a href="sketchbooks.html">Sketchbooks</a>
-                </li>
-                <li>
-                    <a href="woodturning.html">Woodturning</a>
-                </li>
-                <li>
-                    <a href="about.html">About</a>
-                </li>
-                <li>
-                    <a class="active" href="#">Contact</a>
-                </li>
-            </ul>
-        </div>
-        <hr class="navsep"/>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-</nav>
 
 <!-- Page Features -->
 <div class="row text-left">
@@ -182,33 +107,7 @@
 <!-- /.row -->
 <hr class="navsep">
 
-<div class="row">
-    <div class="col-md-4 col-md-offset-5 text-center" style=" font-size:30px;">
-       <div class="col-xs-6 col-md-2">
-            <a href="#">
-          <span class="glyphicon glyphicon-book"></span>
-        </a>
-        </div>
-        <div class="col-xs-6 col-md-2" style=" border: 1px;
-    border-style: solid;
-    border-right: 0px;
-    border-top: 0px;
-    border-bottom: 0px;">
-               <a href="#">
-          <span class="glyphicon glyphicon-camera"></span>
-        </a>
-        </div>
-        <div class="col-xs-6 col-md-2" style=" border: 1px;
-    border-style: solid;
-    border-right: 0px;
-    border-top: 0px;
-    border-bottom: 0px;">
-               <a href="#">
-          <span class="glyphicon glyphicon-envelope"></span>
-        </a>
-        </div>
-    </div>
-</div>
+
 
 
 <!-- jQuery -->
@@ -218,6 +117,7 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 
+<?php include("footer.php"); ?>
 
 </body>
 

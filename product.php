@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>MKR Kild | Sketchbooks</title>
+    <title>MKR Kild | Shop</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -38,25 +38,25 @@
                 <nav class="mobileNav">
                     <ul class="nav text-center">
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="index.php">Home</a>
                         </li>
                         <li>
-                            <a href="furniture.html">Furniture</a>
+                            <a href="#" class="active">Furniture</a>
                         </li>
                         <li>
-                            <a class="active" href="#">Sketchbooks</a>
+                            <a href="furniture.php">Sketchbooks</a>
                         </li>
                         <li>
-                            <a href="woodturning.html">Woodturning</a>
+                            <a href="furniture.php">Woodturning</a>
                         </li>
                         <li>
-                            <a href="about.html">About</a>
+                            <a href="about.php">About</a>
                         </li>
                         <li>
-                            <a href="contact.html">Contact</a>
+                            <a href="contact.php">Contact</a>
                         </li>
                         <li>
-                            <a href="cart.html">Shopping Cart</a>
+                            <a href="cart.php">Shopping Cart</a>
                         </li>
                     </ul>
                 </nav>
@@ -70,7 +70,7 @@
             <a href="#"><img src="./img/logo.png" class="navbar-brand"/></a>
             <div class="text-right" style="padding-right: 100px">
                 <div class="shopping-cart">
-                    <a href="cart.html" style="position: relative">
+                    <a href="cart.php" style="position: relative">
                         <img src="./img/shoppingcart.png" width="35" height="35"/>
                     </a>
                 </div>
@@ -81,22 +81,22 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav text-center">
                 <li>
-                    <a href="index.html">Home</a>
+                    <a href="index.php">Home</a>
                 </li>
                 <li>
-                    <a href="furniture.html">Furniture</a>
+                    <a class="active" href="furniture.php">Furniture</a>
                 </li>
                 <li>
-                    <a class="active" href="#">Sketchbooks</a>
+                    <a href="sketchbooks.php">Sketchbooks</a>
                 </li>
                 <li>
-                    <a href="woodturning.html">Woodturning</a>
+                    <a href="woodturning.php">Woodturning</a>
                 </li>
                 <li>
-                    <a href="about.html">About</a>
+                    <a href="about.php">About</a>
                 </li>
                 <li>
-                    <a href="contact.html">Contact</a>
+                    <a href="contact.php">Contact</a>
                 </li>
             </ul>
         </div>
@@ -107,42 +107,58 @@
 </nav>
 
 
-<!-- Page Features -->
 <div class="row">
-    <div class="col-md-12 text-center" style="padding-left: 100px; padding-right: 100px;">
-        <div class="col-xs-6 col-md-4">
-            <a href="product.html" class="img-responsive">
-                <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=259%C3%97375&w=315&h=219" alt="bla">
-                <figcaption>Product Name<br>
-                    65.00$
-                </figcaption>
-            </a>
+    <div class="col-md-12 text-center">
+        <div class="col-xs-6 col-md-6">
+            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=259%C3%97375&w=475&h=319" alt="bla">
         </div>
-        <div class="col-xs-6 col-md-4">
-            <a href="product.html" class="img-responsive">
-                <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=259%C3%97375&w=315&h=219" alt="bla">
-                <figcaption>Product Name<br>
-                    65.00$
-                </figcaption>
-            </a>
-        </div>
-        <div class="col-xs-6 col-md-4">
-            <a href="product.html" class="img-responsive">
-                <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=259%C3%97375&w=315&h=219" alt="bla">
-                <figcaption>Product Name<br>
-                    65.00$
-                </figcaption>
-            </a>
+        <div class="col-xs-6 col-md-6 text-left" style="margin-left: -50px;">
+            <div class="col-md-11">
+                <h2>Product Name</h2>
+                <br>
+                <text>65.00$</text>
+                <br>
+                <br>
+                <br>
+                <text>loremaosidmaosdmoasfanfnafnoidfsd df sdfn skdjf nskdjfn sjdkfn ksjdfn skdjfn sjdk fnskdjfnk sjdnfppossdofispodifsdfpisod msf odif sopdif</text>
+                <br>
+                <br>
+                <br>
+                <br>
+                <button type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon glyphicon-shopping-cart"></span> Add to cart
+                </button>
+            </div>
+            <div class="col-md-1">
+                <a href="furniture.php">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </a>
+            </div>
         </div>
     </div>
 </div>
 <br>
+<div class="row" style="padding-left:50px;">
+    <div class="col-md-6 col-md-offset-1 text-center">
+        <div class="col-xs-6 col-md-2">
+            <img src="https://placeholdit.imgix.net/~text?txtsize=12&txt=259%C3%97375&w=100&h=60" alt="bla">
+        </div>
+        <div class="col-xs-6 col-md-2">
+            <img src="https://placeholdit.imgix.net/~text?txtsize=12&txt=259%C3%97375&w=100&h=60" alt="bla">
+        </div>
+        <div class="col-xs-6 col-md-2">
+            <img src="https://placeholdit.imgix.net/~text?txtsize=12&txt=259%C3%97375&w=100&h=60" alt="bla">
+        </div>
+    </div>
+</div>
+<!-- /.row -->
+<hr class="navsep"/>
 <br>
-
+<br>
 <div class="row">
     <div class="col-md-12 text-center" style="padding-left: 100px; padding-right: 100px;">
         <div class="col-xs-6 col-md-4">
-            <a href="product.html" class="img-responsive">
+            <a href="product.php" class="img-responsive">
                 <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=259%C3%97375&w=315&h=219" alt="bla">
                 <figcaption>Product Name<br>
                     65.00$
@@ -150,7 +166,7 @@
             </a>
         </div>
         <div class="col-xs-6 col-md-4">
-            <a href="product.html" class="img-responsive">
+            <a href="product.php" class="img-responsive">
                 <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=259%C3%97375&w=315&h=219" alt="bla">
                 <figcaption>Product Name<br>
                     65.00$
@@ -158,7 +174,7 @@
             </a>
         </div>
         <div class="col-xs-6 col-md-4">
-            <a href="product.html" class="img-responsive">
+            <a href="product.php" class="img-responsive">
                 <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=259%C3%97375&w=315&h=219" alt="bla">
                 <figcaption>Product Name<br>
                     65.00$
@@ -170,9 +186,11 @@
 <!-- /.row -->
 
 
+
+
+
 <!-- jQuery -->
 <script src="js/jquery.js"></script>
-<script src="js/main.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>

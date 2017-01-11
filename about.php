@@ -1,3 +1,5 @@
+<?php include('header.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,83 +30,6 @@
 </head>
 
 <body>
-
-<!-- Navigation -->
-<nav class="navbar navbar-inverse navbar-fixed-top navfix" role="navigation">
-    <div class="container navfix">
-
-        <div id="mobileNav">
-            <div class="wrapper">
-                <nav class="mobileNav">
-                    <ul class="nav text-center">
-                        <li>
-                            <a href="index.html">Home</a>
-                        </li>
-                        <li>
-                            <a href="furniture.html">Furniture</a>
-                        </li>
-                        <li>
-                            <a href="sketchbooks.html">Sketchbooks</a>
-                        </li>
-                        <li>
-                            <a href="woodturning.html">Woodturning</a>
-                        </li>
-                        <li>
-                            <a class="active" href="#">About</a>
-                        </li>
-                        <li>
-                            <a href="contact.html">Contact</a>
-                        </li>
-                        <li>
-                            <a href="cart.html">Shopping Cart</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <div id="mobileMenuLink" class="text-center">
-            <a>Menu</a>
-        </div>
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <a href="#"><img src="./img/logo.png" class="navbar-brand"/></a>
-            <div class="text-right" style="padding-right: 100px">
-                <div class="shopping-cart">
-                    <a href="cart.html" style="position: relative">
-                        <img src="./img/shoppingcart.png" width="35" height="35"/>
-                    </a>
-                </div>
-
-            </div>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav text-center">
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li>
-                    <a href="furniture.html">Furniture</a>
-                </li>
-                <li>
-                    <a href="sketchbooks.html">Sketchbooks</a>
-                </li>
-                <li>
-                    <a href="woodturning.html">Woodturning</a>
-                </li>
-                <li>
-                    <a class="active" href="#">About</a>
-                </li>
-                <li>
-                    <a href="contact.html">Contact</a>
-                </li>
-            </ul>
-        </div>
-        <hr class="navsep"/>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-</nav>
 
 <div class="row text-center">
     <div class="col-md-8 col-md-offset-2" style="padding-left">
@@ -167,11 +92,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at euismod dui, i
 
 <br>
 <br>
-<br>
-<!-- Page Features -->
-
 <!-- /.row -->
-
+<br>
+<!-- /.row -->
+<hr class="navsep">
 
 <!-- jQuery -->
 <script src="js/jquery.js"></script>
@@ -180,6 +104,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at euismod dui, i
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 
+<?php include("footer.php"); ?>
 
 </body>
 

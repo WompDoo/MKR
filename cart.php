@@ -37,22 +37,22 @@
                 <nav class="mobileNav">
                     <ul class="nav text-center">
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="index.php">Home</a>
                         </li>
                         <li>
-                            <a href="furniture.html">Furniture</a>
+                            <a href="furniture.php">Furniture</a>
                         </li>
                         <li>
-                            <a href="sketchbooks.html">Sketchbooks</a>
+                            <a href="sketchbooks.php">Sketchbooks</a>
                         </li>
                         <li>
-                            <a href="woodturning.html">Woodturning</a>
+                            <a href="woodturning.php">Woodturning</a>
                         </li>
                         <li>
-                            <a href="about.html">About</a>
+                            <a href="about.php">About</a>
                         </li>
                         <li>
-                            <a href="contact.html">Contact</a>
+                            <a href="contact.php">Contact</a>
                         </li>
                         <li>
                             <a class="active" href="#">Shopping Cart</a>
@@ -80,22 +80,22 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav text-center">
                 <li>
-                    <a href="index.html">Home</a>
+                    <a href="index.php">Home</a>
                 </li>
                 <li>
                     <a class="active" href="#">Furniture</a>
                 </li>
                 <li>
-                    <a href="furniture.html">Sketchbooks</a>
+                    <a href="furniture.php">Sketchbooks</a>
                 </li>
                 <li>
-                    <a href="furniture.html">Woodturning</a>
+                    <a href="furniture.php">Woodturning</a>
                 </li>
                 <li>
-                    <a href="about.html">About</a>
+                    <a href="about.php">About</a>
                 </li>
                 <li>
-                    <a href="contact.html">Contact</a>
+                    <a href="contact.php">Contact</a>
                 </li>
             </ul>
         </div>

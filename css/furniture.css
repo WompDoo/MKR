@@ -28,6 +28,20 @@ body {
     width: 100%;
 }
 
-.active {
-	color: #b5b7c3;
+.footer2 {
+    position: static;
+    margin-bottom: 1%;
+    width: 99%;
+}
+
+.group-social2 {
+    display: flex;
+}
+
+.bordersep {
+    border: 1px;
+    border-style: solid;
+    border-right: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
 }
