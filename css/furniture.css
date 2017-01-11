@@ -1,5 +1,22 @@
 body {
-    padding-top: 12%;
+    padding-top: 22%;
+}
+
+.nav .navbar-lang > li > a {
+    color: #000000;
+    background: none;
+    padding: 10px 10px;
+    font-size: 10px;
+    z-index: 9999;
+}
+
+.nav .navbar-lang > li > a:hover {
+    font-weight: bold;
+}
+
+.nav .navbar-lang > li > a.active {
+    color: #36261B;
+    font-weight: bold;
 }
 
 .headerDivider {
