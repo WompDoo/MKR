@@ -7,6 +7,19 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
     <div class="container navfix">
         <div id="mobileNav">
             <div class="wrapper">
+                <div class="nav languages">
+                    <ul class="nav navbar-lang">
+                        <li>
+                            <a href="#">EST</a>
+                        </li>
+                        <li>
+                            <a class="active" href="#">EN</a>
+                        </li>
+                        <li>
+                            <a href="#">RUS</a>
+                        </li>
+                    </ul>
+                </div>
                 <nav class="mobileNav">
                     <ul class="nav text-center">
                         <li>
@@ -41,11 +54,24 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
         <div class="navbar-header">
             <a href="#"><img src="./img/logo.png" class="navbar-brand"/></a>
             <div class="text-right" style="padding-right: 100px">
-                <div class="shopping-cart">
-                    <a href="cart.php" style="position: relative">
+                <!--<div class="shopping-cart">-->
+                    <div class="nav languages">
+                        <ul class="nav navbar-lang">
+                            <li>
+                                <a href="#">EST</a>
+                            </li>
+                            <li>
+                                <a class="active" href="#">EN</a>
+                            </li>
+                            <li>
+                                <a href="#">RUS</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--<a href="cart.php" style="position: relative">
                         <img src="./img/shoppingcart.png" width="35" height="35"/>
                     </a>
-                </div>
+                </div>-->
 
             </div>
         </div>

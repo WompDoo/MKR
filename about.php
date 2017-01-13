@@ -95,7 +95,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at euismod dui, i
 <!-- /.row -->
 <br>
 <!-- /.row -->
-<hr class="navsep">
+<hr class="footsep">
 
 <!-- jQuery -->
 <script src="js/jquery.js"></script>

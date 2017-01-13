@@ -94,7 +94,7 @@
 <!-- /.row -->
 <br>
 <!-- /.row -->
-<hr class="navsep">
+<hr class="footsep">
 
 <!-- jQuery -->
 <script src="js/jquery.js"></script>

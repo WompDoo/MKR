@@ -5,7 +5,7 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width; initial-scale = 1.0; maximum-scale=1.0; user-scalable=no" />
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -80,12 +80,12 @@
                     </li>
                 </ul>
             </div>
-            <div class="shopping-cart">
+            <!--<div class="shopping-cart">
                 <div class="layer"><a href="cart.php" style="position: relative">
-                    <img src="./img/shoppingcart.png" width="35" height="35"/>
-                </a>
+                        <img src="./img/shoppingcart.png" width="35" height="35"/>
+                    </a>
                 </div>
-            </div>
+            </div>-->
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
 

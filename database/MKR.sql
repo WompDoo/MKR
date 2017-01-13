@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Loomise aeg: Jaan 11, 2017 kell 08:25 EL
+-- Loomise aeg: Jaan 13, 2017 kell 08:50 EL
 -- Serveri versioon: 10.1.9-MariaDB
 -- PHP versioon: 5.6.15
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Andmebaas: `MKR`
+-- Andmebaas: `mkr`
 --
 
 -- --------------------------------------------------------
@@ -50,13 +50,13 @@ CREATE TABLE `customer` (
 -- --------------------------------------------------------
 
 --
--- Tabeli struktuur tabelile `ordering`
+-- Tabeli struktuur tabelile `orders`
 --
 
-CREATE TABLE `ordering` (
-  `ordering_id` int(10) UNSIGNED NOT NULL,
+CREATE TABLE `orders` (
+  `order_id` int(10) UNSIGNED NOT NULL,
   `cart_id` int(10) UNSIGNED NOT NULL,
-  `ordering_status` enum('pending','confirmed','cancelled') NOT NULL
+  `order_status` enum('pending','confirmed','cancelled') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -83,22 +83,44 @@ CREATE TABLE `product` (
   `product_id` int(10) UNSIGNED NOT NULL,
   `product_name` varchar(255) NOT NULL,
   `product_category` varchar(255) NOT NULL,
-  `product_image` longblob NOT NULL,
   `product_details` text NOT NULL,
-  `product_price` decimal(10,0) NOT NULL
+  `product_price` decimal(10,2) NOT NULL,
+  `qty_stock` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Andmete tõmmistamine tabelile `product`
+--
+
+INSERT INTO `product` (`product_id`, `product_name`, `product_category`, `product_details`, `product_price`, `qty_stock`) VALUES
+(1, 'Twisted Cupboard', 'Furniture', 'This is a very artsy cupboard.', '301.95', 2),
+(2, 'Dark Table', 'Furniture', 'This is a very pretty table', '124.32', 1),
+(3, 'Cute Riiul\r\n', 'Furniture', 'This is a nice corner riiul', '80.93', 1),
+(4, 'Baby bed', 'Furniture', 'Babis can sleep here', '120.33', 1);
 
 -- --------------------------------------------------------
 
 --
--- Tabeli struktuur tabelile `stock`
+-- Tabeli struktuur tabelile `productimage`
 --
 
-CREATE TABLE `stock` (
-  `stock_id` int(11) NOT NULL,
+CREATE TABLE `productimage` (
+  `productimage_id` int(10) UNSIGNED NOT NULL,
   `product_id` int(10) UNSIGNED NOT NULL,
-  `quantity` int(11) NOT NULL
+  `image_name` varchar(50) NOT NULL,
+  `image_path` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Andmete tõmmistamine tabelile `productimage`
+--
+
+INSERT INTO `productimage` (`productimage_id`, `product_id`, `image_name`, `image_path`) VALUES
+(1, 1, 'keerdkapp', '/MKR/img/kapid.jpg'),
+(2, 2, 'moobel', '/MKR/img/laud.jpg'),
+(3, 3, 'riiul1', '/MKR/img/Riiul1.jpg'),
+(4, 4, 'babybed', '/MKR/img/voodi.jpg'),
+(5, 1, 'keerdkapp', '/MKR/img/kapp2.jpg');
 
 --
 -- Indeksid tõmmistatud tabelitele
@@ -118,10 +140,10 @@ ALTER TABLE `customer`
   ADD PRIMARY KEY (`customer_id`);
 
 --
--- Indeksid tabelile `ordering`
+-- Indeksid tabelile `orders`
 --
-ALTER TABLE `ordering`
-  ADD PRIMARY KEY (`ordering_id`),
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`order_id`),
   ADD KEY `cart_id` (`cart_id`);
 
 --
@@ -139,11 +161,11 @@ ALTER TABLE `product`
   ADD PRIMARY KEY (`product_id`);
 
 --
--- Indeksid tabelile `stock`
+-- Indeksid tabelile `productimage`
 --
-ALTER TABLE `stock`
-  ADD PRIMARY KEY (`stock_id`),
-  ADD KEY `product_id` (`product_id`);
+ALTER TABLE `productimage`
+  ADD PRIMARY KEY (`productimage_id`),
+  ADD KEY `productimage_product__fk` (`product_id`);
 
 --
 -- AUTO_INCREMENT tõmmistatud tabelitele
@@ -160,10 +182,10 @@ ALTER TABLE `cart`
 ALTER TABLE `customer`
   MODIFY `customer_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT tabelile `ordering`
+-- AUTO_INCREMENT tabelile `orders`
 --
-ALTER TABLE `ordering`
-  MODIFY `ordering_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+ALTER TABLE `orders`
+  MODIFY `order_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT tabelile `payment`
 --
@@ -173,12 +195,12 @@ ALTER TABLE `payment`
 -- AUTO_INCREMENT tabelile `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `product_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
--- AUTO_INCREMENT tabelile `stock`
+-- AUTO_INCREMENT tabelile `productimage`
 --
-ALTER TABLE `stock`
-  MODIFY `stock_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `productimage`
+  MODIFY `productimage_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- Tõmmistatud tabelite piirangud
 --
@@ -190,10 +212,10 @@ ALTER TABLE `cart`
   ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`);
 
 --
--- Piirangud tabelile `ordering`
+-- Piirangud tabelile `orders`
 --
-ALTER TABLE `ordering`
-  ADD CONSTRAINT `ordering_ibfk_1` FOREIGN KEY (`cart_id`) REFERENCES `cart` (`cart_id`);
+ALTER TABLE `orders`
+  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`cart_id`) REFERENCES `cart` (`cart_id`);
 
 --
 -- Piirangud tabelile `payment`
@@ -203,10 +225,10 @@ ALTER TABLE `payment`
   ADD CONSTRAINT `payment_ibfk_2` FOREIGN KEY (`cart_id`) REFERENCES `cart` (`cart_id`);
 
 --
--- Piirangud tabelile `stock`
+-- Piirangud tabelile `productimage`
 --
-ALTER TABLE `stock`
-  ADD CONSTRAINT `stock_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`),
+ALTER TABLE `productimage`
+  ADD CONSTRAINT `productimage_product__fk` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

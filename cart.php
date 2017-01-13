@@ -66,11 +66,11 @@
         </div>
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a href="#"><img src="./img/logo.png" class="navbar-brand"/></a>
+            <a href="#"><img src="img/logo.png" class="navbar-brand"/></a>
             <div class="text-right" style="padding-right: 100px">
                 <div class="shopping-cart">
                     <a href="cart.html" style="position: relative">
-                        <img src="./img/shoppingcart.png" width="35" height="35"/>
+                        <img src="img/shoppingcart.png" width="35" height="35"/>
                     </a>
                 </div>
 

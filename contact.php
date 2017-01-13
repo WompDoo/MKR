@@ -105,7 +105,7 @@
 </div>
 <br>
 <!-- /.row -->
-<hr class="navsep">
+<hr class="footsep">
 
 
 
