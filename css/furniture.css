@@ -18,6 +18,12 @@ body {
     margin-right: 30px;
 }
 
+.hide-bullets {
+    list-style:none;
+    margin-left: -40px;
+    margin-top:20px;
+}
+
 .footer2 {
     position: static;
     margin-bottom: 1%;

@@ -52,7 +52,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
         </div>
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a href="#"><img src="./img/logo.png" class="navbar-brand"/></a>
+            <a href="index.php"><img src="./img/logo.png" class="navbar-brand"/></a>
             <div class="text-right" style="padding-right: 100px">
                 <!--<div class="shopping-cart">-->
                     <div class="nav languages">

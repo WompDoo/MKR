@@ -36,65 +36,104 @@ include('controllers/furniture.php');
 
 <!-- Page Features -->
 
+<div id="productModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="productModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="productModalLabel">Modal Title</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-xs-12" id="slider">
+                    <!-- Top part of the slider -->
+                    <div class="row">
+                        <div class="col-sm-8" id="carousel-bounding-box">
+                            <div class="carousel slide" id="modalCarousel" data-interval="false">
+                                <!-- Carousel items -->
+                                <div class="carousel-inner">
+                                    <div class="active item" data-slide-number="0">
+                                        <img src="http://placehold.it/770x300&text=one"></div>
+
+                                    <div class="item" data-slide-number="1">
+                                        <img src="http://placehold.it/770x300&text=two"></div>
+
+                                    <div class="item" data-slide-number="2">
+                                        <img src="http://placehold.it/770x300&text=three"></div>
+
+                                    <div class="item" data-slide-number="3">
+                                        <img src="http://placehold.it/770x300&text=four"></div>
+
+                                    <div class="item" data-slide-number="4">
+                                        <img src="http://placehold.it/770x300&text=five"></div>
+
+                                    <div class="item" data-slide-number="5">
+                                        <img src="http://placehold.it/770x300&text=six"></div>
+                                </div><!-- Carousel nav -->
+                                <a class="left carousel-control" href="#modalCarousel" role="button" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                </a>
+                                <a class="right carousel-control" href="#modalCarousel" role="button" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4" id="carousel-text">
+                            <h2>Item Description</h2>
+                            <p>Here will be the description of item</p>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/Slider-->
+
+            <div class="row hidden-xs" id="slider-thumbs">
+                <!-- Bottom switcher of slider -->
+                <ul class="hide-bullets">
+                    <li class="col-sm-2">
+                        <a class="thumbnail" id="carousel-selector-0"><img
+                                    src="http://placehold.it/170x100&text=one"></a>
+                    </li>
+
+                    <li class="col-sm-2">
+                        <a class="thumbnail" id="carousel-selector-1"><img
+                                    src="http://placehold.it/170x100&text=two"></a>
+                    </li>
+
+                    <li class="col-sm-2">
+                        <a class="thumbnail" id="carousel-selector-2"><img src="http://placehold.it/170x100&text=three"></a>
+                    </li>
+
+                    <li class="col-sm-2">
+                        <a class="thumbnail" id="carousel-selector-3"><img src="http://placehold.it/170x100&text=four"></a>
+                    </li>
+
+                    <li class="col-sm-2">
+                        <a class="thumbnail" id="carousel-selector-4"><img src="http://placehold.it/170x100&text=five"></a>
+                    </li>
+
+                    <li class="col-sm-2">
+                        <a class="thumbnail" id="carousel-selector-5"><img
+                                    src="http://placehold.it/170x100&text=six"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
 <div class="row">
     <div class="col-md-12 text-center">
 
         <?php
         fetchFurniture();
         ?>
-
-        <!--<div class="col-xs-6 col-md-4">
-            <a href="product.php" class="img-responsive">
-                <?php
-        //fetchFurniture();
-        ?>
-                <figcaption>Product Name<br>
-                    65.00$
-                </figcaption>
-            </a>
-        </div>
-        <div class="col-xs-6 col-md-4">
-            <a href="product.php" class="img-responsive">
-                <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=259%C3%97375&w=315&h=219" alt="bla">
-                <figcaption>Product Name<br>
-                    65.00$
-                </figcaption>
-            </a>
-        </div>
-    </div>-->
     </div>
 </div>
 <br>
 <br>
-<!--
-<div class="row">
-    <div class="col-md-12 text-center" style="padding-left: 100px; padding-right: 100px;">
-        <div class="col-xs-6 col-md-4">
-            <a href="product.php" class="img-responsive">
-                <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=259%C3%97375&w=315&h=219" alt="bla">
-                <figcaption>Product Name<br>
-                    65.00$
-                </figcaption>
-            </a>
-        </div>
-        <div class="col-xs-6 col-md-4">
-            <a href="product.php" class="img-responsive">
-                <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=259%C3%97375&w=315&h=219" alt="bla">
-                <figcaption>Product Name<br>
-                    65.00$
-                </figcaption>
-            </a>
-        </div>
-        <div class="col-xs-6 col-md-4">
-            <a href="product.php" class="img-responsive">
-                <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=259%C3%97375&w=315&h=219" alt="bla">
-                <figcaption>Product Name<br>
-                    65.00$
-                </figcaption>
-            </a>
-        </div>
-    </div>
-</div>-->
+
 <!-- /.row -->
 <br>
 <!-- /.row -->
@@ -102,6 +141,7 @@ include('controllers/furniture.php');
 
 <!-- jQuery -->
 <script src="js/jquery.js"></script>
+<script src="js/modalcarousel.js"></script>
 <script src="js/main.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
