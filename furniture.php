@@ -1,6 +1,7 @@
 <?php
 include('header.php');
 include('controllers/furniture.php');
+//include('controllers/modalproduct.php');
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +43,7 @@ include('controllers/furniture.php');
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="productModalLabel">Modal Title</h4>
+                <h4 class="modal-title" id="productModalLabel"><?php echo "$r[product_name]"; ?></h4>
             </div>
             <div class="modal-body">
                 <div class="col-xs-12" id="slider">
@@ -52,8 +53,22 @@ include('controllers/furniture.php');
                             <div class="carousel slide" id="modalCarousel" data-interval="false">
                                 <!-- Carousel items -->
                                 <div class="carousel-inner">
-                                    <div class="active item" data-slide-number="0">
-                                        <img src="http://placehold.it/770x300&text=one"></div>
+                                    <?php
+                                    $i = 1; //Counter
+                                    foreach ($rows as $r): //Foreach
+                                        $item_class = ($i == 1) ? 'item active' : 'item'; //Set class active for image which is showing
+                                        ?>
+                                        <div class="<?php echo $item_class; ?>">
+                                            <img src="<?php echo $r['image_path'];?>" width="900px" height="500px" >
+                                        </div>
+                                        <?php $i++; ?>
+                                    <?php endforeach; ?>
+                                       <!-- <div class="active item" data-slide-number="0">>
+                                            <img src="http://placehold.it/770x300&text=one"/>
+                                        </div>
+
+                                    <!--<div class="active item" data-slide-number="0">
+                                        <img src=<//?php $row['mage_path'] ?>></div>
 
                                     <div class="item" data-slide-number="1">
                                         <img src="http://placehold.it/770x300&text=two"></div>
@@ -68,7 +83,7 @@ include('controllers/furniture.php');
                                         <img src="http://placehold.it/770x300&text=five"></div>
 
                                     <div class="item" data-slide-number="5">
-                                        <img src="http://placehold.it/770x300&text=six"></div>
+                                        <img src="http://placehold.it/770x300&text=six"></div>-->
                                 </div><!-- Carousel nav -->
                                 <a class="left carousel-control" href="#modalCarousel" role="button" data-slide="prev">
                                     <span class="glyphicon glyphicon-chevron-left"></span>
@@ -81,7 +96,7 @@ include('controllers/furniture.php');
 
                         <div class="col-sm-4" id="carousel-text">
                             <h2>Item Description</h2>
-                            <p>Here will be the description of item</p>
+                            <p>Here will be the description of the item</p>
                         </div>
                     </div>
                 </div>
