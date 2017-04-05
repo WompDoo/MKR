@@ -43,6 +43,17 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                         <li>
                             <a class="<?= ($activePage == 'cart') ? 'active':''; ?>"  href="cart.php">Shopping Cart</a>
                         </li>
+                        <ul class="nav lang">
+                            <li>
+                                <a href="#">ENG</a>
+                            </li>
+                            <li>
+                                <a class="lang-sep" href="#">EST</a>
+                            </li>
+                            <li>
+                                <a class="lang-sep" href="#">RUS</a>
+                            </li>
+                        </ul>
                     </ul>
                 </nav>
             </div>
@@ -53,7 +64,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <a href="index.php"><img src="./img/logo.png" class="navbar-brand"/></a>
-            <div class="text-right" style="padding-right: 100px">
+            <div class="text-right hidden-xs" style="padding-right: 100px">
                 <!--<div class="shopping-cart">-->
                     <div class="nav languages">
                         <ul class="nav navbar-lang">

@@ -1,4 +1,4 @@
-<?php include("header.php"); ?>
+<?php include("./../header.php"); ?>
 
 
 <!DOCTYPE html>
@@ -15,11 +15,11 @@
     <title>MKR Kild | Contact Us</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="./../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS-->
-    <link href="css/furniture.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
+    <link href="./../css/furniture.css" rel="stylesheet">
+    <link href="./../css/main.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -111,13 +111,13 @@
 
 
 <!-- jQuery -->
-<script src="js/jquery.js"></script>
-<script src="js/main.js"></script>
+<script src="./../js/jquery.js"></script>
+<script src="./../js/main.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+<script src="./../js/bootstrap.min.js"></script>
 
-<?php include("footer.php"); ?>
+<?php include("./../footer.php"); ?>
 
 </body>
 

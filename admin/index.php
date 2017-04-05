@@ -12,10 +12,10 @@
     <title>MKR Kild</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="./../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="./css/main.css" rel="stylesheet">
+    <link href="./../css/main.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -77,19 +77,28 @@
         </div>
 
         <div class="navbar-header">
-            <a href="#"><img src="./img/logo.png" class="navbar-brand"/></a>
+            <a href="#"><img src="./../img/logo.png" class="navbar-brand"/></a>
             <div class="nav languages hidden-xs">
-                <ul class="nav navbar-lang">
-                    <li>
-                        <a href="#">EST</a>
-                    </li>
-                    <li>
-                        <a class="active" href="#">EN</a>
-                    </li>
-                    <li>
-                        <a href="#">RUS</a>
-                    </li>
-                </ul>
+                <div class="row">
+                    <ul class="nav navbar-lang">
+                        <li>
+                            <a href="#">EST</a>
+                        </li>
+                        <li>
+                            <a class="active" href="#">EN</a>
+                        </li>
+                        <li>
+                            <a href="#">RUS</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-cp text-left">
+                        <li>
+                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
+                                <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <!--<div class="shopping-cart">
                 <div class="layer"><a href="cart.php" style="position: relative">
@@ -129,6 +138,67 @@
     <!-- /.container -->
 </nav>
 
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Muuda taustapilti</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container-modal">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><strong>Laadi ülesse pilte</strong></div>
+                        <div class="panel-body">
+
+                            <!-- Standard Form -->
+                            <h4>Vali arvutist failid</h4>
+                            <form method="post" enctype="multipart/form-data" id="js-upload-form">
+                                <div class="form-inline">
+                                    <div class="form-group">
+                                        <input type="file" name="file[]" id="js-upload-files" multiple>
+                                    </div>
+                                    <button type="submit" class="btn btn-sm btn-primary" id="js-upload-submit" name="submit" >Upload files</button>
+                                </div>
+
+                                <!-- Drop Zone -->
+                                <h4>Või tõsta failid lihtsalt siia</h4>
+                                <div class="upload-drop-zone" id="drop-zone">
+                                    Lohista pilt siia
+                                </div>
+                            </form>
+                            <div class="js-upload-finished">
+                                <h3>Üleslaaditud pildid</h3>
+                                <div class="col-md-12 text-center">
+                                    <div class="col-xs-6 col-md-3">
+                                        <img src="https://placeholdit.imgix.net/~text?txtsize=12&txt=259%C3%97375&w=100&h=60" alt="bla">
+                                    </div>
+                                    <div class="col-xs-6 col-md-3">
+                                        <img src="https://placeholdit.imgix.net/~text?txtsize=12&txt=259%C3%97375&w=100&h=60" alt="bla">
+                                    </div>
+                                    <div class="col-xs-6 col-md-3">
+                                        <img src="https://placeholdit.imgix.net/~text?txtsize=12&txt=259%C3%97375&w=100&h=60" alt="bla">
+                                    </div>
+                                    <div class="col-xs-6 col-md-3">
+                                        <img src="https://placeholdit.imgix.net/~text?txtsize=12&txt=259%C3%97375&w=100&h=60" alt="bla">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
 
 <!-- Full Page Image Background Carousel Header -->
 <header id="myCarousel" class="carousel slide">
@@ -137,21 +207,21 @@
     <div class="carousel-inner">
         <div class="item active">
             <!-- Set the first background image using inline CSS below. -->
-            <div class="fill" style="background-image:url('img/moobel.JPG');"></div>
+            <div class="fill" style="background-image:url('./../img/moobel.JPG');"></div>
             <div class="carousel-caption">
                 <!--<h2>Caption 1</h2>-->
             </div>
         </div>
         <div class="item">
             <!-- Set the second background image using inline CSS below. -->
-            <div class="fill" style="background-image:url('img/markmik.JPG');"></div>
+            <div class="fill" style="background-image:url('./../img/markmik.JPG');"></div>
             <div class="carousel-caption">
                 <!--<h2>Caption 1</h2>-->
             </div>
         </div>
         <div class="item">
             <!-- Set the third background image using inline CSS below. -->
-            <div class="fill" style="background-image:url('img/kurikas.JPG');"></div>
+            <div class="fill" style="background-image:url('./../img/kurikas.JPG');"></div>
             <div class="carousel-caption">
                 <!--<h2>Caption 1</h2>-->
             </div>
@@ -161,36 +231,37 @@
 
 </header>
 
+
 <footer class="footer">
     <div class="row">
         <div class="group-social col-md-4 col-md-offset-5 text-center">
             <div class="col-xs-6 col-md-2">
                 <a href="https://www.facebook.com/MKRKILD/">
-                    <img src="./img/facebook.png" width="30" height="30"/>
+                    <img src="./../img/facebook.png" width="30" height="30"/>
                 </a>
             </div>
             <div class="socialborder col-xs-6 col-md-2">
                 <a href="#">
-                    <img src="./img/instagram.png" width="28" height="28"/>
+                    <img src="./../img/instagram.png" width="28" height="28"/>
                 </a>
             </div>
             <div class="socialborder col-xs-6 col-md-2">
                 <a href="#">
-                    <img src="./img/google.png" width="33" height="25"/>
+                    <img src="./../img/google.png" width="33" height="25"/>
                 </a>
             </div>
         </div>
     </div>
 </footer>
 
-<script src="js/jquery.js"></script>
-<script src="js/main.js"></script>
+<script src="./../js/jquery.js"></script>
+<script src="./../js/main.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+<script src="./../js/bootstrap.min.js"></script>
 
 <!-- Script to Activate the Carousel -->
-<script src="js/carousel.js"></script>
+<script src="./../js/carousel.js"></script>
 
 
 </body>
