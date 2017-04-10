@@ -1,6 +1,6 @@
 <?php
 include('header.php');
-include('controllers/modalproduct.php');
+include('controllers/product_details.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +36,8 @@ include('controllers/modalproduct.php');
 
 <div class="row">
     <div class="col-md-12 text-center">
-        <div class="col-xs-6 col-md-6">
+        <!--<div class="col-xs-6 col-md-6">-->
+            <div class="col-sm-6" id="slider-thumbs">
             <img class="mainpic" src="<?php echo $img?>" alt="<?php echo $name . " by MKR Kild ";?>">
         </div>
         <div class="col-xs-6 col-md-6 text-left" style="margin-left: -50px;">
@@ -51,10 +52,10 @@ include('controllers/modalproduct.php');
                         ?></text>
                 <br>
                 <br>
-                <br>
                 <text><?php echo $details?></text>
                 <br>
                 <br>
+                <text><?php echo $quantity . " items left in stock"; ?></text>
                 <br>
                 <br>
                 <button type="button" class="btn btn-default">
