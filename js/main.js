@@ -29,6 +29,56 @@ document.addEventListener('readystatechange', function () {
     }
 });
 
+$(document).ready(function(){
+    $(document).on("click", ".add", (function(){
+        var id = $(this).parents("tr").attr("data-id");
+        $.ajax({
+            type: 'POST',
+            url: './../controllers/addStock.php',
+            data: { id: id },
+            dataType: 'text',
+            success: function(data) {
+                $("#furniture-dad").load(location.href + " #furniture");
+
+            }
+        });
+    }));
+});
+
+$(document).ready(function(){
+    $(document).on("click", ".remove", (function(){
+        var id = $(this).parents("tr").attr("data-id");
+        $.ajax({
+            type: 'POST',
+            url: './../controllers/rmvStock.php',
+            data: { id: id },
+            dataType: 'text',
+            success: function(data) {
+                $("#furniture-dad").load(location.href + " #furniture");
+
+            }
+        });
+    }));
+});
+
+$(document).ready(function(){
+    $(document).on("click", ".destroy", (function(){
+        var id = $(this).parents("tr").attr("data-id");
+        $.ajax({
+            type: 'POST',
+            url: './../controllers/destroyStock.php',
+            data: { id: id },
+            dataType: 'text',
+            success: function(data) {
+                $("#furniture-dad").load(location.href + " #furniture");
+
+            }
+        });
+    }));
+});
+
+
+
 $(function () {
     'use strict';
 
@@ -110,3 +160,10 @@ $(function () {
     }
 
 });
+
+
+
+$(document).on("click",".sidebar-toggle",function(){
+    $(".wrapper").toggleClass("toggled");
+});
+
