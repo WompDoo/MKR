@@ -2,45 +2,58 @@
 include('header.php');
 include('controllers/product_details.php');
 ?>
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
-<head>
+    <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-    <title>MKR Kild | Shop</title>
+        <title>MKR Kild | Shop</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS-->
-    <link href="css/furniture.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
+        <!-- Custom CSS-->
+        <link href="css/furniture.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
 
-</head>
+    </head>
 
-<body>
+    <body>
 
 
-<div class="row">
-    <div class="col-md-12 text-center">
-        <!--<div class="col-xs-6 col-md-6">-->
-            <div class="col-sm-6" id="slider-thumbs">
-            <img class="mainpic" src="<?php echo $img?>" alt="<?php echo $name . " by MKR Kild ";?>">
+    <div class="row">
+        <div class="col-xs-12 col-md-6" id="productSlider">
+            <!-- Top part of the slider -->
+            <div class="col-sm-8 col-md-11 col-md-offset-1" id="carousel-bounding-box">
+                <div class="carousel slide" id="picCarousel" data-interval="false">
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
+                        <?php echo createCarousel(); ?>
+                    </div><!-- Carousel nav -->
+                    <a class="left carousel-control" href="#picCarousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#picCarousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="col-xs-6 col-md-6 text-left" style="margin-left: -50px;">
+
+        <div class="col-xs-6 col-md-6">
             <div class="col-md-11">
                 <h2><?php
                     echo $name;
@@ -48,11 +61,11 @@ include('controllers/product_details.php');
                 <br>
                 <text>
                     <?php
-                        echo $price . " €";
-                        ?></text>
+                    echo $price . " €";
+                    ?></text>
                 <br>
                 <br>
-                <text><?php echo $details?></text>
+                <text><?php echo $details ?></text>
                 <br>
                 <br>
                 <text><?php echo $quantity . " items left in stock"; ?></text>
@@ -69,36 +82,37 @@ include('controllers/product_details.php');
             </div>
         </div>
     </div>
-</div>
-<br>
-<div class="row" style="padding-left:50px;">
-    <div class="col-md-6 col-md-offset-1 text-center">
-        <div class="col-xs-6 col-md-2">
-            <img src="https://placeholdit.imgix.net/~text?txtsize=12&txt=259%C3%97375&w=100&h=60" alt="bla">
-        </div>
-        <div class="col-xs-6 col-md-2">
-            <img src="https://placeholdit.imgix.net/~text?txtsize=12&txt=259%C3%97375&w=100&h=60" alt="bla">
-        </div>
-        <div class="col-xs-6 col-md-2">
-            <img src="https://placeholdit.imgix.net/~text?txtsize=12&txt=259%C3%97375&w=100&h=60" alt="bla">
+    <div class="row">
+        <div class="hidden-xs col-md-6" id="slider-thumbs">
+            <div class="col-md-11 col-md-offset-1">
+                <!-- Bottom switcher of slider -->
+                <ul class="hide-bullets">
+                    <?php
+                    createThumdnail();
+                    ?>
+                </ul>
+            </div>
         </div>
     </div>
-</div>
-<!-- /.row -->
-<hr class="navsep"/>
-<br>
-<!-- /.row -->
-
-<!-- jQuery -->
-<script src="js/jquery.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+    <br>
 
 
-</body>
+    <!-- /.row -->
+    <hr class="navsep"/>
+    <br>
+    <!-- /.row -->
 
-</html>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+
+    </body>
+
+    </html>
 <?php
 include('footer.php');
 ?>

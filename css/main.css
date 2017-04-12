@@ -148,6 +148,17 @@ background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75
     font-weight: bold;
 }
 
+#productSlider img {
+    width: auto;
+    height: 54vmin;
+    max-height: 55vmin;
+    margin: auto;
+}
+
+#picCarousel > a.carousel-control {
+    background-image: none!important;
+}
+
 .carousel,
 .item,
 .active {

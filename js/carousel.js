@@ -1,4 +1,4 @@
-$('.carousel').carousel({
+$('#myCarousel').carousel({
     interval: 5000,
-    pause: "hover"
+    pause: "false"
 })
