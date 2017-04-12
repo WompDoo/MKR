@@ -75,6 +75,20 @@ $(document).ready(function(){
             }
         });
     }));
+
+    $(document).on("click", ".create", (function(){
+        $.ajax({
+            type: 'POST',
+            url: './../controllers/createStock.php',
+            data: $('#newProduct').serialize()  ,
+            dataType: 'text',
+            success: function(data) {
+                console.log(data);
+                $("#furniture-dad").load(location.href + " #furniture");
+
+            }
+        });
+    }));
 });
 
 

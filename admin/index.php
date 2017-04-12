@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION['myusername'])){
+    header("Location:./../login/");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,8 +34,45 @@
 
 <body>
 
+<nav id="navbarAdmin" class="navbar navbar-default navbar-fixed-top topbar">
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+
+            <a href="../admin/" class="navbar-brand">
+                <span class="visible-xs">MKR</span>
+                <span class="hidden-xs">MKR Kild</span>
+            </a>
+
+            <p class="navbar-text">
+                <a href="#" class="sidebar-toggle">
+                    <i class="glyphicon glyphicon-bars"></i>
+                </a>
+            </p>
+
+        </div>
+
+        <div class="navbar-collapse collapse" id="navbar-collapse-main">
+
+            <ul class="nav navbar-nav navbar-right">
+
+                <li class="dropdown">
+                    <button class="navbar-btn" data-toggle="dropdown">
+                        <img src="http://lorempixel.com/30/30/people" class="img-circle">
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="./../login/logout.php">Logout</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
 <!-- Navigation -->
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<nav id="navbarRegular" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div id="mobileNav">

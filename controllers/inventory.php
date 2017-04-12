@@ -51,9 +51,6 @@ function fetchFurniture()
         echo "
         <tr data-id='$id'>
 
-                                            <td class=\"text-center\">
-                                                $id
-                                            </td>
                                             <td>
                                                 $name
                                             </td>
@@ -85,11 +82,11 @@ function fetchFurniture()
     $result->close();
 }
 
-function fetchCategory()
+function fetchCategoryFurn()
 {
     global $db;
 
-    $sql = "SELECT product_category FROM product";
+    $sql = "SELECT DISTINCT product_category FROM product";
 
 // Write mysql query to fetch $sql
     $result = $db->query($sql);
@@ -97,14 +94,57 @@ function fetchCategory()
 
 // Create BS grid view for the results
     if (mysqli_num_rows($result) > 0) { //Run Loop
-        while($row = mysqli_fetch_assoc($result)) {
-            $category = $row['product_category'];
+        while($row =mysqli_fetch_array($result)) {
+            $category[] = $row['product_category'];
         }
-        echo "$category";
+        echo "$category[0]";
 
     }
     $result->close();
 }
+
+function fetchCategorySket()
+{
+    global $db;
+
+    $sql = "SELECT DISTINCT product_category FROM product";
+
+// Write mysql query to fetch $sql
+    $result = $db->query($sql);
+
+
+// Create BS grid view for the results
+    if (mysqli_num_rows($result) > 0) { //Run Loop
+        while($row =mysqli_fetch_array($result)) {
+            $category[] = $row['product_category'];
+        }
+        echo "$category[1]";
+
+    }
+    $result->close();
+}
+
+function fetchCategoryWood()
+{
+    global $db;
+
+    $sql = "SELECT DISTINCT product_category FROM product";
+
+// Write mysql query to fetch $sql
+    $result = $db->query($sql);
+
+
+// Create BS grid view for the results
+    if (mysqli_num_rows($result) > 0) { //Run Loop
+        while($row =mysqli_fetch_array($result)) {
+            $category[] = $row['product_category'];
+        }
+        echo "$category[2]";
+
+    }
+    $result->close();
+}
+
 
 function addStock()
 {
@@ -115,15 +155,6 @@ function addStock()
 // Write mysql query to fetch $sql
     $result = $db->query($sql);
 
-
-// Create BS grid view for the results
-    /*if (mysqli_num_rows($result) > 0) { //Run Loop
-        while($row = mysqli_fetch_assoc($result)) {
-            $category = $row['product_category'];
-        }
-        echo "$category";
-
-    }*/
     $result->close();
 }
 

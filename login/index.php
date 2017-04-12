@@ -12,13 +12,13 @@
     <title>MKR Admin-site</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="./css/signin.css" rel="stylesheet">
+    <link href="./../css/signin.css" rel="stylesheet">
 
   <script type="text/javascript">// Promises 
-var _eid_promises = {}; 
+/*var _eid_promises = {};
 // Turn the incoming message from extension 
 // into pending Promise resolving 
 window.addEventListener("message", function(event) { 
@@ -90,25 +90,22 @@ function TokenSigning() {
         return messagePromise({ 
             type: "VERSION" 
         }); 
-    }; 
-}</script></head>
+    };
+}*/
+ </script>
+</head>
 
   <body>
 
     <div class="container">
 
-      <form class="form-signin">
+      <form method="POST" action="checklogin.php" class="form-signin">
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="inputUsername" class="sr-only">Email address</label>
-        <input type="username" id="inputUsername" class="form-control" placeholder="Username" required="" autofocus="">
+        <input type="username" id="myusername" name="myusername" class="form-control" placeholder="Username" required="" autofocus="">
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <input type="password" id="mypassword" name="mypassword" class="form-control" placeholder="Password" required="">
+        <button id="button" name="submit" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       </form>
 
     </div> <!-- /container -->

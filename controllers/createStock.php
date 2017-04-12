@@ -1,12 +1,18 @@
 <?php
 require '../config.php';
 {
+    $name = $_POST["name"];
+    $price = $_POST["price"];
+    $qty = $_POST["qty"];
+    $description = $_POST["description"];
+    $category = $_POST['category'];
+
     global $db;
-    $id = $_POST['id'];
-    $sql = "DELETE FROM product WHERE product_id = $id";
+
     $sql = "INSERT INTO product (product_name, product_category, product_details, product_price, qty_stock)
-VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway')";
+VALUES ('$name', '$category', '$description', $price, $qty)";
+
 // Write mysql query to fetch $sql
     $result = $db->query($sql);
-    echo "1";
+    echo $result;
 }

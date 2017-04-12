@@ -1,4 +1,9 @@
 <?php
+session_start();
+if(!isset($_SESSION['myusername'])){
+    header("Location:./../login/");
+}
+
 include('./../controllers/inventory.php');
 ?>
 
@@ -32,12 +37,66 @@ include('./../controllers/inventory.php');
 
 <body>
 
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h2>Lisa uus toode</h2>
+            </div>
+            <div class="modal-body">
+                <div class="container-modal">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><strong>Uue toote andmed</strong></div>
+                        <div class="panel-body">
+
+                            <!-- Standard Form -->
+                                <form id="newProduct" method="post">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Product name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Select list (select one):</label>
+                                        <select class="form-control" id="category" name="category">
+                                            <option value="Furniture">Furniture</option>
+                                            <option value="Sketchbooks">Sketchbooks</option>
+                                            <option value="Woodturning">Woodturning</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="number" step="0.01" class="form-control" id="price" name="price" placeholder="Price" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="number"  class="form-control" id="qty" name="qty" placeholder="Quantity in stock" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control" type="textarea" id="description" name="description" placeholder="Product description" maxlength="140" rows="7"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-default create">Submit</button>
+                                </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
 <nav class="navbar navbar-default navbar-fixed-top topbar">
     <div class="container-fluid">
 
         <div class="navbar-header">
 
-            <a href="index.php" class="navbar-brand">
+            <a href="../admin/" class="navbar-brand">
                 <span class="visible-xs">MKR</span>
                 <span class="hidden-xs">MKR Kild</span>
             </a>
@@ -59,7 +118,7 @@ include('./../controllers/inventory.php');
                         <img src="http://lorempixel.com/30/30/people" class="img-circle">
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Logout</a></li>
+                        <li><a href="./../login/logout.php">Logout</a></li>
                     </ul>
                 </li>
 
@@ -92,13 +151,13 @@ include('./../controllers/inventory.php');
                                     <div class="panel-heading">
                                         <h4>
                                             <?php
-                                            echo(fetchCategory());
+                                            echo(fetchCategoryFurn());
                                             ?>
                                         </h4>
                                     </div>
                                 </div>
                                 <div class="col col-xs-6 text-right">
-                                    <button type="button" class="btn btn-sm btn-primary btn-create">Create New</button>
+                                    <button data-toggle="modal" data-target="#myModal" type="button" class="btn btn-sm btn-primary btn-create">Create New</button>
                                 </div>
                             </div>
                             <div class="panel panel-default panel-table">
@@ -106,7 +165,6 @@ include('./../controllers/inventory.php');
                                     <table id="furniture" class="table table-striped table-bordered table-list">
                                         <thead>
                                         <tr>
-                                            <th>ID</th>
                                             <th>Product Name</th>
                                             <th>Details</th>
                                             <th>Price</th>
@@ -127,33 +185,14 @@ include('./../controllers/inventory.php');
                         </div>
                     </div>
                 </div>
-                </div>
 
-                <!--<div class="col-xs-12 col-sm-3">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Something
-                        </div>
-                        <div class="panel-body">
-                            The sidebar is naturally responsive according to screen width. You can toggle it using the menu button in the topbar. Test it out by increasing/decreasing your screen width and watch it respond.
-                        </div>
-                    </div>
-
-                    <!--<div class="panel panel-default">
-                        <div class="panel-heading">
-                           MKR Kild
-                        </div>
-                        <div class="panel-body">
-                            Designed by <a href="http://www.kaitanilabs.com" target="_blank">Kaitani Labs</a>
-                        </div>
-                    </div>
-                </div>-->
 
                 </div>
 
             </section>
 
         </section>
+
 
 
     </section>
