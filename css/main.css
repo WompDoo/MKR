@@ -319,26 +319,3 @@ body {
     color: #222;
     border-color: #222;
 }
-
-#navbarAdmin body {
-    padding-top:70px;
-}
-
-#navbarAdmin.navbar-header {
-    float: none;
-}
-#navbarAdmin.navbar-toggle {
-    display: block;
-}
-#navbarAdmin.navbar-collapse.collapse {
-    display: none!important;
-}
-#navbarAdmin.navbar-nav {
-    float: none!important;
-}
-#navbarAdmin.navbar-nav>li {
-    float: none;
-}
-#navbarAdmin.navbar-collapse.collapse.in{
-    display:block !important;
-}
