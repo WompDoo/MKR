@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION['myusername'])){
+if (!isset($_SESSION['myusername'])) {
     header("Location:./../login/");
 }
 ?>
@@ -34,39 +34,25 @@ if(!isset($_SESSION['myusername'])){
 
 <body>
 
-<nav id="navbarAdmin" class="navbar navbar-default navbar-fixed-top topbar">
-    <div class="container-fluid">
-
-        <div class="navbar-header">
-
-            <a href="../admin/" class="navbar-brand">
-                <span class="visible-xs">MKR</span>
-                <span class="hidden-xs">MKR Kild</span>
-            </a>
-
+<nav id="navbarAdmin" class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">Brand</a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="navbar-header navbar-right">
             <p class="navbar-text">
-                <a href="#" class="sidebar-toggle">
-                    <i class="glyphicon glyphicon-bars"></i>
-                </a>
+                <a href="#" class="navbar-link">Username</a>
             </p>
-
-        </div>
-
-        <div class="navbar-collapse collapse" id="navbar-collapse-main">
-
-            <ul class="nav navbar-nav navbar-right">
-
-                <li class="dropdown">
-                    <button class="navbar-btn" data-toggle="dropdown">
-                        <img src="http://lorempixel.com/30/30/people" class="img-circle">
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a href="./../login/logout.php">Logout</a></li>
-                    </ul>
-                </li>
-
-            </ul>
-
         </div>
     </div>
 </nav>
@@ -203,7 +189,9 @@ if(!isset($_SESSION['myusername'])){
                                     <div class="form-group">
                                         <input type="file" name="file[]" id="js-upload-files" multiple>
                                     </div>
-                                    <button type="submit" class="btn btn-sm btn-primary" id="js-upload-submit" name="submit" >Upload files</button>
+                                    <button type="submit" class="btn btn-sm btn-primary" id="js-upload-submit"
+                                            name="submit">Upload files
+                                    </button>
                                 </div>
 
                                 <!-- Drop Zone -->
@@ -216,16 +204,20 @@ if(!isset($_SESSION['myusername'])){
                                 <h3>Üleslaaditud pildid</h3>
                                 <div class="col-md-12 text-center">
                                     <div class="col-xs-6 col-md-3">
-                                        <img src="https://placeholdit.imgix.net/~text?txtsize=12&txt=259%C3%97375&w=100&h=60" alt="bla">
+                                        <img src="https://placeholdit.imgix.net/~text?txtsize=12&txt=259%C3%97375&w=100&h=60"
+                                             alt="bla">
                                     </div>
                                     <div class="col-xs-6 col-md-3">
-                                        <img src="https://placeholdit.imgix.net/~text?txtsize=12&txt=259%C3%97375&w=100&h=60" alt="bla">
+                                        <img src="https://placeholdit.imgix.net/~text?txtsize=12&txt=259%C3%97375&w=100&h=60"
+                                             alt="bla">
                                     </div>
                                     <div class="col-xs-6 col-md-3">
-                                        <img src="https://placeholdit.imgix.net/~text?txtsize=12&txt=259%C3%97375&w=100&h=60" alt="bla">
+                                        <img src="https://placeholdit.imgix.net/~text?txtsize=12&txt=259%C3%97375&w=100&h=60"
+                                             alt="bla">
                                     </div>
                                     <div class="col-xs-6 col-md-3">
-                                        <img src="https://placeholdit.imgix.net/~text?txtsize=12&txt=259%C3%97375&w=100&h=60" alt="bla">
+                                        <img src="https://placeholdit.imgix.net/~text?txtsize=12&txt=259%C3%97375&w=100&h=60"
+                                             alt="bla">
                                     </div>
                                 </div>
                             </div>
@@ -240,7 +232,6 @@ if(!isset($_SESSION['myusername'])){
 
     </div>
 </div>
-
 
 
 <!-- Full Page Image Background Carousel Header -->

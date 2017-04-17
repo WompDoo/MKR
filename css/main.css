@@ -13,15 +13,15 @@ body {
 }
 
 .lang-sep {
-    border:1px;
+    border: 1px;
     border-style: solid;
     border-right: 0px;
     border-top: 0px;
     border-bottom: 0px;
     border-color: gray;
 
-
 }
+
 .navbar-brand {
     float: none;
     width: 175px;
@@ -36,18 +36,18 @@ body {
 }
 
 #shopping-cart {
-   margin-top: 43vmin;
+    margin-top: 43vmin;
 }
 
 #btnEmpty {
-    float:right;
+    float: right;
 }
 
 .navsep {
-width: 90%;
-border: 0;
-height: 1px;
-background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    width: 90%;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
     margin-bottom: 2px;
 }
 
@@ -60,13 +60,12 @@ background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75
 }
 
 .footsep {
-width: 90%;
-border: 0;
-height: 1px;
-background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    width: 90%;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
     margin-bottom: 20px;
 }
-
 
 .navbar .navbar-nav {
     display: inline-block;
@@ -78,7 +77,6 @@ background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75
 .navbar .navbar-collapse {
     text-align: center;
 }
-
 
 /*.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
     background-color: rgba(220, 220, 220, .8);
@@ -145,7 +143,6 @@ background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75
     font-weight: bold;
 }
 
-
 .navbar-inverse .navbar-nav > li > a.active {
     color: black;
     font-weight: bold;
@@ -159,7 +156,7 @@ background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75
 }
 
 #picCarousel > a.carousel-control {
-    background-image: none!important;
+    background-image: none !important;
 }
 
 .carousel,
@@ -195,7 +192,6 @@ background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75
 .group-social {
     float: right;
     display: flex;
-    margin-right: 5;
 }
 
 .footer {
@@ -224,7 +220,7 @@ background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75
 @media only screen and (max-width: 640px) {
 
     body {
-        padding-top: 26%!important;
+        padding-top: 26% !important;
     }
 
     .shopping-cart {
@@ -303,7 +299,6 @@ background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75
     height: 375px;
 }
 
-
 /* layout.css Style */
 .upload-drop-zone {
     height: 100px;
@@ -319,31 +314,31 @@ background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75
     line-height: 100px;
     text-align: center
 }
+
 .upload-drop-zone.drop {
     color: #222;
     border-color: #222;
 }
 
-#navbarAdmin {
+#navbarAdmin body {
+    padding-top:70px;
+}
 
-    .navbar-btn {
-        background: none;
-        border: none;
-        height: 35px;
-        min-width: 35px;
-        color: #fff;
-    }
-
-    .navbar-text {
-        margin-top: 14px;
-        margin-bottom: 14px;
-    }
-
-    @media (min-width: 768px) {
-        .navbar-text {
-            float: left;
-            margin-left: 15px;
-            margin-right: 15px;
-        }
-    }
+#navbarAdmin.navbar-header {
+    float: none;
+}
+#navbarAdmin.navbar-toggle {
+    display: block;
+}
+#navbarAdmin.navbar-collapse.collapse {
+    display: none!important;
+}
+#navbarAdmin.navbar-nav {
+    float: none!important;
+}
+#navbarAdmin.navbar-nav>li {
+    float: none;
+}
+#navbarAdmin.navbar-collapse.collapse.in{
+    display:block !important;
 }
