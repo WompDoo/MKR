@@ -1,4 +1,5 @@
 <?php
+include('controllers/cart.php');
 include('header.php');
 include('controllers/product_details.php');
 ?>
@@ -55,14 +56,14 @@ include('controllers/product_details.php');
 
         <div class="col-xs-6 col-md-6">
             <div class="col-md-11">
-                <h2><?php
-                    echo $name;
-                    ?></h2>
+           <!--     <h2><?php
+/*                    echo $name;
+                    */?></h2>
                 <br>
                 <text>
                     <?php
-                    echo $price . " €";
-                    ?></text>
+/*                    echo $price . " €";
+                    */?></text>-->
                 <br>
                 <br>
                 <text><?php echo $details ?></text>
@@ -71,9 +72,28 @@ include('controllers/product_details.php');
                 <text><?php echo $quantity . " items left in stock"; ?></text>
                 <br>
                 <br>
-                <button type="button" class="btn btn-default">
+                <?php
+                $id= $_GET['id'];
+                    $product_array = $db_handle->runQuery("SELECT product_code, product_name, product_price FROM product where product_id=$id");
+                        if (!empty($product_array)) {
+                            foreach ($product_array as $key => $value) {
+                                ?>
+                                <form method="post"
+                                      action="cart.php?action=add&product_code=<?php echo $product_array[$key]["product_code"]; ?>">
+                                    <div><strong><?php echo $product_array[$key]["product_name"]; ?></strong></div>
+                                    <div class="product-price"><?php echo $product_array[$key]["product_price"] . "€" ; ?></div>
+                                    <div><input type="text" name="quantity" value="1" size="2"/><input type="submit"
+                                                                                                       value="Add to cart"
+                                                                                                       class="btnAddAction"/>
+                                    </div>
+                                </form>
+                                <?php
+                            }
+                        }
+                                ?>
+          <!--      <button type="button" class="btn btn-default">
                     <span class="glyphicon glyphicon glyphicon-shopping-cart"></span> Add to cart
-                </button>
+                </button>-->
             </div>
             <div class="col-md-1">
                 <a href="furniture.php">

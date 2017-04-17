@@ -50,7 +50,6 @@ include('controllers/furniture.php');
 
 <!-- jQuery -->
 <script src="js/jquery.js"></script>
-<script src="js/modalcarousel.js"></script>
 <script src="js/main.js"></script>
 
 <!-- Bootstrap Core JavaScript -->

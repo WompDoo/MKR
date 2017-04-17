@@ -35,9 +35,12 @@ body {
     border-radius: 30px;
 }
 
-.shopping-cart {
- padding-right: 95px;
-    float: right;
+#shopping-cart {
+   margin-top: 43vmin;
+}
+
+#btnEmpty {
+    float:right;
 }
 
 .navsep {
