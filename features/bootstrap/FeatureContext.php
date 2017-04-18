@@ -8,7 +8,7 @@ use Behat\MinkExtension\Context\MinkContext;
 /**
  * Defines application features from the specific context.
  */
-class FeatureContext extends MinkContext implements Context, SnippetAcceptingContext
+class FeatureContext extends MinkContext implements Context
 {
     /**
      * Initializes context.
@@ -23,8 +23,24 @@ class FeatureContext extends MinkContext implements Context, SnippetAcceptingCon
 
     /**
      * @BeforeScenario
+     *
      */
-    public function checkIfExists() {
-        
+/*
+    public function checkIfExists()
+    {
+        if (!exists('test')) {
+            mkdir('test');
+        }
+        chdir('test');
+    }*/
+
+    /**
+     * @Given there is an admin user :username with password :password
+     */
+
+    public function thereIsAnAdminUserWithPassword($username, $password)
+    {
+
     }
+
 }

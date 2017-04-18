@@ -56,6 +56,7 @@ include('controllers/product_details.php');
 
         <div class="col-xs-6 col-md-6">
             <div class="col-md-11">
+                <div id='cart_update_info'></div>
            <!--     <h2><?php
 /*                    echo $name;
                     */?></h2>
@@ -78,7 +79,7 @@ include('controllers/product_details.php');
                         if (!empty($product_array)) {
                             foreach ($product_array as $key => $value) {
                                 ?>
-                                <form method="post"
+                                <form class="item_form" method="post"
                                       action="cart.php?action=add&product_code=<?php echo $product_array[$key]["product_code"]; ?>">
                                     <div><strong><?php echo $product_array[$key]["product_name"]; ?></strong></div>
                                     <div class="product-price"><?php echo $product_array[$key]["product_price"] . "€" ; ?></div>

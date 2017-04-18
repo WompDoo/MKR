@@ -1,41 +1,42 @@
-$(function () {
-    var i = 0;
-    $('#mobileMenuLink').on('click', function () {
-        i++;
-        if (i % 2 != 0) {
-            $('#mobileNav').css({
-                'max-height': '999px',
-                'transition-property': 'all',
-                'transition-duration': '.5s',
-                'transition-timing-function': 'cubic-bezier(0, 1, 0.5, 1)',
-                'overflow': 'visible',
-                'visibility': 'visible'
+$(document).ready(function () {
 
-            });
-        } else {
-            $('#mobileNav').css({
-                'max-height': '0',
-                'overflow': 'hidden',
-                'visibility': 'hidden'
-            });
-        }
+    $(function () {
+        var i = 0;
+        $('#mobileMenuLink').on('click', function () {
+            i++;
+            if (i % 2 != 0) {
+                $('#mobileNav').css({
+                    'max-height': '999px',
+                    'transition-property': 'all',
+                    'transition-duration': '.5s',
+                    'transition-timing-function': 'cubic-bezier(0, 1, 0.5, 1)',
+                    'overflow': 'visible',
+                    'visibility': 'visible'
+
+                });
+            } else {
+                $('#mobileNav').css({
+                    'max-height': '0',
+                    'overflow': 'hidden',
+                    'visibility': 'hidden'
+                });
+            }
+        });
     });
-});
 
 //Prevent the function to run before the document is loaded
-document.addEventListener('readystatechange', function () {
-    if (document.readyState === "complete") {
+    document.addEventListener('readystatechange', function () {
+        if (document.readyState === "complete") {
 
-    }
-});
+        }
+    });
 
-$(document).ready(function () {
 //ProductCarousel
     $('#picCarousel').carousel({
         interval: false
     });
 
-// handles the carousel thumbnails
+// Handles the carousel thumbnails
     $('[id^=carousel-selector-]').click(function () {
         var id_selector = $(this).attr("id");
         var id = id_selector.substr(id_selector.length - 1);
@@ -44,10 +45,9 @@ $(document).ready(function () {
         $('[id^=carousel-selector-]').removeClass('active');
         $(this).addClass('active');
     });
-});
 
 
-$(document).ready(function () {
+    //Add stock quantity on admin panel
     $(document).on("click", ".add", (function () {
         var id = $(this).parents("tr").attr("data-id");
         $.ajax({
@@ -57,13 +57,11 @@ $(document).ready(function () {
             dataType: 'text',
             success: function (data) {
                 $("#furniture-dad").load(location.href + " #furniture");
-
             }
         });
     }));
-});
 
-$(document).ready(function () {
+    //Remove from stock quantity on admin panel
     $(document).on("click", ".remove", (function () {
         var id = $(this).parents("tr").attr("data-id");
         $.ajax({
@@ -77,9 +75,8 @@ $(document).ready(function () {
             }
         });
     }));
-});
 
-$(document).ready(function () {
+    //Remove the item completely
     $(document).on("click", ".destroy", (function () {
         var id = $(this).parents("tr").attr("data-id");
         $.ajax({
@@ -94,22 +91,23 @@ $(document).ready(function () {
         });
     }));
 
-    $(document).on("click", ".create", (function(){
+    //Create a new product as admin
+    $(document).on("click", ".create", (function () {
         $.ajax({
             type: 'POST',
             url: './../controllers/createStock.php',
-            data: $('#newProduct').serialize()  ,
+            data: $('#newProduct').serialize(),
             dataType: 'text',
-            success: function(data) {
+            success: function (data) {
                 console.log(data);
                 $("#furniture-dad").load(location.href + " #furniture");
 
             }
         });
     }));
-});
 
 
+// WE NEED IT LATER FOR UPLOADING STUFF
 // $(function () {
 //     'use strict';
 //
@@ -193,7 +191,9 @@ $(document).ready(function () {
 // });
 
 
-$(document).on("click", ".sidebar-toggle", function () {
-    $(".wrapper").toggleClass("toggled");
+    /* WE MIGHT NEED IT ON THE ADMIN PANEL
+     $(document).on("click", ".sidebar-toggle", function () {
+     $(".wrapper").toggleClass("toggled");
+     });
+     */
 });
-

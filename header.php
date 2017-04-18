@@ -23,7 +23,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                 <nav class="mobileNav">
                     <ul class="nav text-center">
                         <li>
-                            <a href="index.php">Home</a>
+                            <a href="/">Home</a>
                         </li>
                         <li>
                             <a class="<?= ($activePage == 'furniture') ? 'active':''; ?>" href="furniture.php">Furniture</a>
