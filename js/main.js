@@ -106,6 +106,17 @@ $(document).ready(function () {
         });
     }));
 
+    //Handle admin nav animations
+    $("#hideNav").click(function(event){
+        $("#adminNavbar").hide("slow");
+        $("#hiddenBtn").show("slow");
+        document.getElementById("navbarRegular").style.paddingTop = "0px";
+    });
+    $("#hiddenBtn").click(function(event){
+        $("#adminNavbar").show("slow");
+        $("#hiddenBtn").hide("slow");
+        document.getElementById("navbarRegular").style.paddingTop = "50px";
+    });
 
 // WE NEED IT LATER FOR UPLOADING STUFF
 // $(function () {

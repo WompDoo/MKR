@@ -24,8 +24,7 @@ body {
 
 .navbar-brand {
     float: none;
-    width: 175px;
-    height: 175px;
+    height: 115px;
 }
 
 .layer {
@@ -85,7 +84,7 @@ body {
 }
 */
 .navbar-lang {
-    margin-top: -16%;
+    margin-top: -11%;
     display: flex;
     float: right;
     margin-right: -30px;
@@ -308,14 +307,126 @@ body {
 
 /* skin.css Style*/
 .upload-drop-zone {
-    color: #ccc;
+    color: #ff695e;
     border-style: dashed;
-    border-color: #ccc;
+    border-color: #ff695e;
     line-height: 100px;
-    text-align: center
+    text-align: center;
+    background-color: #2f2f2f;
 }
 
 .upload-drop-zone.drop {
     color: #222;
     border-color: #222;
 }
+
+#adminNavbar {
+    height: 51px;
+}
+
+nav[role="admin"].topbar {
+    background: #1f2021;
+    border: none;
+    margin-bottom: 0;
+    z-index: 9999;
+    height: 51px;
+}
+
+nav[role="admin"].navbar-fixed-bottom, nav[role="admin"].navbar-fixed-top {
+    position: relative;
+}
+
+nav[role="admin"].topbar, nav[role="admin"].navbar-header a {
+    color: #ffffff;
+}
+
+nav[role="admin"] .navbar-btn {
+    background: none;
+    border: none;
+    height: 35px;
+    min-width: 35px;
+    color: #fff;
+}
+
+nav[role="admin"] .navbar-text {
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+
+nav[role="admin"] .button {
+    margin-right: 5px!important;
+}
+
+
+.position {
+    padding-top: 6px;
+}
+
+nav[role="admin"] .buttons a {
+    color: white;
+}
+
+nav[role="admin"] .navbar-header {
+    float: left;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+    margin-right: -15px;
+    margin-left: -15px;
+
+}
+
+nav[role="admin"] .nav {
+    background: none;
+}
+
+nav[role="admin"] .navbar-brand {
+    float: left;
+    margin-left: 0;
+    height: 40px;
+    padding-left: 50px;
+}
+
+#navbarRegular {
+    padding-top: 50px;
+
+}
+#hiddenBtn {
+    display: none;
+    position: absolute;
+    z-index: 9999;
+    height: 51px;
+    width: 51px;
+    border-radius: 0;
+}
+#hiddenBtn i{
+    color: white;
+}
+
+.btnColor {
+    background-color: black;
+}
+
+.navbar-btn img {
+    height: 30px;
+    width: 30px;
+}
+
+#myModal {
+    padding-top: 30px;
+}
+
+.modal-body, .modal-footer, .panel-body {
+    background-color: #1f2021;
+}
+
+.panel-heading {
+    background-color: #2f2f2f!important;
+    color: white!important;
+}
+
+#myModal h3,h4 {
+    color: #777;
+}
+
+

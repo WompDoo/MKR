@@ -1,7 +1,16 @@
 body {
     padding-top: 40px;
     padding-bottom: 40px;
-    background-color: #eee;
+    background-color: #1f2021;
+}
+
+h2 {
+    color: #777777;
+}
+
+#myusername, #mypassword {
+    background-color: rgb(51, 56, 60);
+    border-color: rgb(84, 200, 255);
 }
 
 .form-signin {

@@ -17,8 +17,9 @@ if (!isset($_SESSION['myusername'])) {
 
     <title>MKR Kild</title>
 
-    <!-- Bootstrap Core CSS -->
+    <!-- Bootstrap Core CSS and other frameworks -->
     <link href="./../css/bootstrap.min.css" rel="stylesheet">
+    <link href="./../css/semantic.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="./../css/main.css" rel="stylesheet">
@@ -33,26 +34,50 @@ if (!isset($_SESSION['myusername'])) {
 </head>
 
 <body>
+<button id="hiddenBtn" class="btn btnColor">
+    <i class="glyphicon glyphicon-cog"></i>
+</button>
 
-<nav id="navbarAdmin" class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="#">Brand</a>
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-    </div>
-    <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="navbar-header navbar-right">
-            <p class="navbar-text">
-                <a href="#" class="navbar-link">Username</a>
-            </p>
+<nav id="adminNavbar" class="navbar navbar-default navbar-static-top topbar" role="admin">
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+
+            <a href="../admin/" class="navbar-brand">
+                <span class="hidden-xs">MKR Kild<sup>Admin</sup></span>
+            </a>
+            <div class="ui buttons position">
+                <button class="navbar-text ui inverted red button">
+                    <a data-toggle="modal" data-target="#myModal" class="sidebar-toggle">
+                        Background
+                    </a>
+                </button>
+                <button class="navbar-text ui inverted green button">
+                    <a href="admin.php">Dashboard</a>
+                </button>
+
+            </div>
+        </div>
+
+        <div class="navbar-collapse collapse" id="navbar-collapse-main">
+
+
+            <ul class="nav navbar-nav navbar-right">
+
+                <li class="dropdown">
+                    <button class="navbar-btn active" data-toggle="dropdown">
+                        <img src="./../img/logo2.png" class="img-circle">
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="./../login/logout.php">Logout</a></li>
+                        <li><a id="hideNav">Hide</a></li>
+                        <li id="showNav" class="hidden"><a>Show</a></li>
+                    </ul>
+                </li>
+
+
+            </ul>
+
         </div>
     </div>
 </nav>
@@ -94,7 +119,7 @@ if (!isset($_SESSION['myusername'])) {
                                 <a class="lang-sep" href="#">EST</a>
                             </li>
                             <li>
-                                <a class="lang-sep" href="#">RUS</a>
+                                <a class="lang-sep"  href="#">RUS</a>
                             </li>
                         </ul>
                     </ul>
@@ -117,14 +142,7 @@ if (!isset($_SESSION['myusername'])) {
                             <a class="active" href="#">EN</a>
                         </li>
                         <li>
-                            <a href="#">RUS</a>
-                        </li>
-                    </ul>
-                    <ul class="nav navbar-cp text-left">
-                        <li>
-                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
-                                <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
-                            </button>
+                            <a  href="#">RUS</a>
                         </li>
                     </ul>
                 </div>
@@ -172,10 +190,6 @@ if (!isset($_SESSION['myusername'])) {
 
         <!-- Modal content-->
         <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Muuda taustapilti</h4>
-            </div>
             <div class="modal-body">
                 <div class="container-modal">
                     <div class="panel panel-default">
@@ -189,7 +203,7 @@ if (!isset($_SESSION['myusername'])) {
                                     <div class="form-group">
                                         <input type="file" name="file[]" id="js-upload-files" multiple>
                                     </div>
-                                    <button type="submit" class="btn btn-sm btn-primary" id="js-upload-submit"
+                                    <button type="submit" class="ui button inverted blue" id="js-upload-submit"
                                             name="submit">Upload files
                                     </button>
                                 </div>
@@ -226,7 +240,7 @@ if (!isset($_SESSION['myusername'])) {
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="ui inverted red button" data-dismiss="modal">Close</button>
             </div>
         </div>
 
@@ -293,6 +307,7 @@ if (!isset($_SESSION['myusername'])) {
 
 <!-- Bootstrap Core JavaScript -->
 <script src="./../js/bootstrap.min.js"></script>
+<script src="./../js/semantic.min.js"></script>
 
 <!-- Script to Activate the Carousel -->
 <script src="./../js/carousel.js"></script>

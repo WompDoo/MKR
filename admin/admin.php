@@ -22,6 +22,7 @@ include('./../controllers/inventory.php');
 
     <!-- Bootstrap Core CSS -->
     <link href="./../css/bootstrap.min.css" rel="stylesheet">
+    <link href="./../css/semantic.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="./../css/admin.css" rel="stylesheet">
@@ -91,36 +92,48 @@ include('./../controllers/inventory.php');
 
 
 
-<nav class="navbar navbar-default navbar-fixed-top topbar">
+<nav id="adminNavbar" class="navbar navbar-default navbar-static-top topbar" role="admin">
     <div class="container-fluid">
 
         <div class="navbar-header">
 
             <a href="../admin/" class="navbar-brand">
-                <span class="visible-xs">MKR</span>
-                <span class="hidden-xs">MKR Kild</span>
+                <span class="hidden-xs">MKR Kild<sup>Admin</sup></span>
             </a>
+            <div class="ui buttons position">
+                <button class="navbar-text ui inverted red button">
+                    <a href="index.php">Home</a>
+                </button>
+                <button class="navbar-text ui inverted blue button">
+                    <a href="furniture.php">Furniture</a>
+                </button>
+                <button class="navbar-text ui inverted green button">
+                    <a href="sketchbooks.php">Sketchbooks</a>
+                </button>
+                <button class="navbar-text ui inverted orange button">
+                    <a href="woodturning.php">Woodturning</a>
+                </button>
+                <button class="navbar-text ui inverted yellow button">
+                    <a href="contact.php">Contact</a>
+                </button>
 
-            <p class="navbar-text">
-                <a href="#" class="sidebar-toggle">
-                    <i class="glyphicon glyphicon-bars"></i>
-                </a>
-            </p>
-
+            </div>
         </div>
 
         <div class="navbar-collapse collapse" id="navbar-collapse-main">
 
+
             <ul class="nav navbar-nav navbar-right">
 
                 <li class="dropdown">
-                    <button class="navbar-btn" data-toggle="dropdown">
-                        <img src="http://lorempixel.com/30/30/people" class="img-circle">
+                    <button class="navbar-btn active" data-toggle="dropdown">
+                        <img src="./../img/logo2.png" class="img-circle">
                     </button>
                     <ul class="dropdown-menu">
                         <li><a href="./../login/logout.php">Logout</a></li>
                     </ul>
                 </li>
+
 
             </ul>
 
@@ -201,6 +214,7 @@ include('./../controllers/inventory.php');
 
 <script src="./../js/jquery.js"></script>
 <script src="./../js/main.js"></script>
+<script src="./../js/semantic.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="./../js/bootstrap.min.js"></script>

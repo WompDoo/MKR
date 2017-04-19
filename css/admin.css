@@ -4,13 +4,13 @@ body {
 }
 
 .topbar {
-    background: #2A3F54;
-    border-color: #2A3F54;
+    background: #1f2021;
+    border-color: #1f2021;
     border-radius: 0px;
 }
 
 .topbar .navbar-header a {
-    color: #ffffff;
+    color: #777;
 }
 
 .wrapper {
@@ -29,7 +29,7 @@ body {
     width: 50px;
     height: 100%;
     overflow-y: auto;
-    background: #2A3F54;
+    background: #1f2021;
     color: #ffffff;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -39,7 +39,6 @@ body {
 
 .main {
     width: 100%;
-    position: relative;
     padding-bottom:20px;
 }
 
@@ -166,4 +165,76 @@ nav.subbar > ul.nav.nav-tabs > li.active > a {
         margin-left: 15px;
         margin-right: 15px;
     }
+}
+
+#adminNavbar {
+    height: 51px;
+}
+
+nav[role="admin"].topbar {
+    background: #1f2021;
+    border: none;
+    margin-bottom: 0;
+    z-index: 9999;
+    height: 51px;
+}
+
+nav[role="admin"].navbar-fixed-bottom, nav[role="admin"].navbar-fixed-top {
+    position: relative;
+}
+
+nav[role="admin"].topbar, nav[role="admin"].navbar-header a {
+    color: #ffffff;
+}
+
+nav[role="admin"] .navbar-btn {
+    background: none;
+    border: none;
+    height: 35px;
+    min-width: 35px;
+    color: #fff;
+}
+
+nav[role="admin"] .navbar-text {
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+
+nav[role="admin"] .button {
+    margin-right: 5px!important;
+}
+
+
+.position {
+    padding-top: 6px;
+}
+
+nav[role="admin"] .buttons a {
+    color: white;
+}
+
+nav[role="admin"] .navbar-header {
+    float: left;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+    margin-right: -15px;
+    margin-left: -15px;
+
+}
+
+nav[role="admin"] .nav {
+    background: none;
+}
+
+nav[role="admin"] .navbar-brand {
+    float: left;
+    margin-left: 0;
+    height: 40px;
+    padding-left: 50px;
+}
+
+.navbar-btn img {
+    height: 30px;
+    width: 30px;
 }
