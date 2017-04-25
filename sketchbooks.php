@@ -1,5 +1,5 @@
 <?php include('header.php');
-include('./controllers/furniture.php');
+include('./controllers/products.php');
 ?>
 
 <!DOCTYPE html>
