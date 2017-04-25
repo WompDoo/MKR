@@ -1,5 +1,6 @@
 <?php
 $activePage = basename($_SERVER['PHP_SELF'], ".php");
+include_once(__DIR__.'./controllers/dbController.php');
 ?>
 
 <!-- Navigation -->
@@ -13,7 +14,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                             <a href="#">EST</a>
                         </li>
                         <li>
-                            <a class="active" href="#">EN</a>
+                            <a class="active" href="#">ENG</a>
                         </li>
                         <li>
                             <a href="#">RUS</a>
@@ -25,15 +26,25 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                         <li>
                             <a href="/">Home</a>
                         </li>
-                        <li>
-                            <a class="<?= ($activePage == 'furniture') ? 'active':''; ?>" href="furniture.php">Furniture</a>
-                        </li>
-                        <li>
-                            <a class="<?= ($activePage == 'sketchbooks') ? 'active':''; ?>" href="sketchbooks.php">Sketchbooks</a>
-                        </li>
-                        <li>
-                            <a class="<?= ($activePage == 'woodturning') ? 'active':''; ?>" href="woodturning.php">Woodturning</a>
-                        </li>
+                        <?php
+                        /*  Display Menus from MySQL Database
+                        *   Change
+                        **/
+                        /* FETCH ITEMS ACCORDING TO CATEGORIES CHOSEN BY USER */
+                        if (isset($_GET['menu'])) {
+                            $menuCategory = $_GET['menu'];
+                            /* If you want to display all items click on ShareMyWeb Logo */
+
+                                $items = $database->query("SELECT * FROM product WHERE product_category='{$menuCategory}'");
+                        }
+
+                        foreach($database->findMenuItem() as $menuItem){
+                            echo "<li class='active'>
+                            <a id='{$menuItem['product_category']}' href={$menuItem['product_category']}.php>{$menuItem['product_category']}</a>
+                                    </li>";
+                        }
+                        ?>
+
                         <li>
                             <a class="<?= ($activePage == 'about') ? 'active':''; ?>" href="about.php">About</a>
                         </li>
@@ -92,15 +103,21 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                 <li>
                     <a href="index.php">Home</a>
                 </li>
-                <li>
-                    <a class="<?= ($activePage == 'furniture') ? 'active':''; ?>" href="furniture.php">Furniture</a>
-                </li>
-                <li>
-                    <a class="<?= ($activePage == 'sketchbooks') ? 'active':''; ?>" href="sketchbooks.php">Sketchbooks</a>
-                </li>
-                <li>
-                    <a class="<?= ($activePage == 'woodturning') ? 'active':''; ?>" href="woodturning.php">Woodturning</a>
-                </li>
+                <?php
+
+                /* FETCH ITEMS ACCORDING TO CATEGORIES */
+                if (isset($_GET['menu'])) {
+                    $menuCategory = $_GET['menu'];
+
+                    $items = $database->query("SELECT * FROM product WHERE product_category='{$menuCategory}'");
+                }
+
+                foreach($database->findMenuItem() as $menuItem){
+                    echo "<li>
+                            <a id='{$menuItem['product_category']}' href={$menuItem['product_category']}.php>{$menuItem['product_category']}</a>
+                                    </li>";
+                }
+                ?>
                 <li>
                     <a class="<?= ($activePage == 'about') ? 'active':''; ?>" href="about.php">About</a>
                 </li>

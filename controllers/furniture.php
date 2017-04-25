@@ -2,14 +2,18 @@
 
 include_once(__DIR__.'./../config.php');
 
-function fetchFurniture()
+function fetchProducts()
 {
     global $db;
 
-    $sql = "SELECT image_path, product.product_id, product.product_name, product.product_price, product.product_category FROM productimage
+    $URL = $_SERVER['PHP_SELF'];
+    $cat = basename($URL, ".php");
+
+    $sql = "SELECT image_path, product.product_id, product.product_name, product.product_price, product.product_category, product.qty_stock FROM productimage
  JOIN product
     ON product.product_id = productimage.product_id
-GROUP BY productimage.product_id;
+    WHERE product.product_category='$cat' AND product.qty_stock > 0
+GROUP BY productimage.product_id
 ";
 
 // Write mysql query to fetch $sql

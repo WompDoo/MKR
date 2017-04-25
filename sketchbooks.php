@@ -1,4 +1,6 @@
-<?php include('header.php'); ?>
+<?php include('header.php');
+include('./controllers/furniture.php');
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,65 +33,11 @@
 
 <body>
 
-<!-- Page Features -->
 <div class="row">
-    <div class="col-md-12 text-center" style="padding-left: 100px; padding-right: 100px;">
-        <div class="col-xs-6 col-md-4">
-            <a href="product.php" class="img-responsive">
-                <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=259%C3%97375&w=315&h=219" alt="bla">
-                <figcaption>Product Name<br>
-                    65.00$
-                </figcaption>
-            </a>
-        </div>
-        <div class="col-xs-6 col-md-4">
-            <a href="product.php" class="img-responsive">
-                <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=259%C3%97375&w=315&h=219" alt="bla">
-                <figcaption>Product Name<br>
-                    65.00$
-                </figcaption>
-            </a>
-        </div>
-        <div class="col-xs-6 col-md-4">
-            <a href="product.php" class="img-responsive">
-                <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=259%C3%97375&w=315&h=219" alt="bla">
-                <figcaption>Product Name<br>
-                    65.00$
-                </figcaption>
-            </a>
-        </div>
-    </div>
-</div>
-<br>
-<br>
-
-<div class="row">
-    <div class="col-md-12 text-center" style="padding-left: 100px; padding-right: 100px;">
-        <div class="col-xs-6 col-md-4">
-            <a href="product.php" class="img-responsive">
-                <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=259%C3%97375&w=315&h=219" alt="bla">
-                <figcaption>Product Name<br>
-                    65.00$
-                </figcaption>
-            </a>
-        </div>
-        <div class="col-xs-6 col-md-4">
-            <a href="product.php" class="img-responsive">
-                <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=259%C3%97375&w=315&h=219" alt="bla">
-                <figcaption>Product Name<br>
-                    65.00$
-                </figcaption>
-            </a>
-        </div>
-        <div class="col-xs-6 col-md-4">
-            <a href="product.php" class="img-responsive">
-                <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=259%C3%97375&w=315&h=219" alt="bla">
-                <figcaption>Product Name<br>
-                    65.00$
-                </figcaption>
-            </a>
-        </div>
-    </div>
+    <div class="col-md-12 text-center">
+        <?php
+        fetchProducts();
+        ?>
 </div>
 <!-- /.row -->
 <br>

@@ -1,3 +1,7 @@
+<!-- Navigation -->
+<?php
+include('header.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,107 +31,6 @@
 </head>
 
 <body>
-
-<!-- Navigation -->
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div id="mobileNav">
-            <div class="wrapper">
-                <nav class="mobileNav">
-                    <ul class="nav text-center">
-                        <li>
-                            <a class="active" href="#">Home</a>
-                        </li>
-                        <li>
-                            <a href="furniture.php">Furniture</a>
-                        </li>
-                        <li>
-                            <a href="furniture.php">Sketchbooks</a>
-                        </li>
-                        <li>
-                            <a href="furniture.php">Woodturning</a>
-                        </li>
-                        <li>
-                            <a href="about.php">About</a>
-                        </li>
-                        <li>
-                            <a href="contact.php">Contact</a>
-                        </li>
-                        <li>
-                            <a href="cart.php">Shopping Cart</a>
-                        </li>
-                        <ul class="nav lang visible-xs">
-                            <li>
-                                <a href="#">ENG</a>
-                            </li>
-                            <li>
-                                <a class="lang-sep" href="#">EST</a>
-                            </li>
-                            <li>
-                                <a class="lang-sep" href="#">RUS</a>
-                            </li>
-                        </ul>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <div id="mobileMenuLink" class="text-center">
-            <a>Menu</a>
-        </div>
-
-        <div class="navbar-header">
-            <a href="#"><img src="./img/logo.png" class="navbar-brand"/></a>
-            <div class="nav languages hidden-xs">
-                <ul class="nav navbar-lang">
-                    <li>
-                        <a href="#">EST</a>
-                    </li>
-                    <li>
-                        <a class="active" href="#">EN</a>
-                    </li>
-                    <li>
-                        <a href="#">RUS</a>
-                    </li>
-                </ul>
-            </div>
-            <!--<div class="shopping-cart">
-                <div class="layer"><a href="cart.php" style="position: relative">
-                        <img src="./img/shoppingcart.png" width="35" height="35"/>
-                    </a>
-                </div>
-            </div>-->
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-
-        <div class="collapse navbar-collapse" id="navbar">
-            <ul class="nav navbar-nav text-center">
-                <li>
-                    <a class="active" href="#">Home</a>
-                </li>
-                <li>
-                    <a href="furniture.php">Furniture</a>
-                </li>
-                <li>
-                    <a href="sketchbooks.php">Sketchbooks</a>
-                </li>
-                <li>
-                    <a href="woodturning.php">Woodturning</a>
-                </li>
-                <li>
-                    <a href="about.php">About</a>
-                </li>
-                <li>
-                    <a href="contact.php">Contact</a>
-                </li>
-            </ul>
-        </div>
-        <hr class="navsep"/>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-</nav>
 
 
 <!-- Full Page Image Background Carousel Header -->

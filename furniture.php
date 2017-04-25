@@ -37,7 +37,7 @@ include('controllers/furniture.php');
 <div class="row">
     <div class="col-md-12 text-center">
         <?php
-        fetchFurniture();
+        fetchProducts();
         ?>
     </div>
 </div>
