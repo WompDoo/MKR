@@ -22,14 +22,13 @@ GROUP BY productimage.product_id
     while ($row = $result->fetch_assoc()) {
 
         $rows[] = $row;
-
     }
 
 // Create BS grid view for the results
     foreach ($rows as $row) {
         $id = $row['product_id'];
 
-        echo "<div class=\"col-6 col-md-4\">
+        echo "<div class=\"col-xs-6 col-md-4\">
                <a href='./product.php?id=$id'>
                <img class='productimg' src='$row[image_path]' alt='Wooden products by MKR Kild' />
                 <figcaption>$row[product_name] <br>

@@ -12,10 +12,8 @@ body {
 }
 
 .navbar-lang {
-    margin-top: -13%!important;
-    display: flex;
-    float: right;
-    margin-right: 30px;
+    margin-top: -7.5vmax!important;
+    margin-right: 157px!important;
 }
 
 .hide-bullets {

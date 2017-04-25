@@ -8,23 +8,10 @@ include_once(__DIR__.'./controllers/dbController.php');
     <div class="container navfix">
         <div id="mobileNav">
             <div class="wrapper">
-                <div class="nav languages">
-                    <ul class="nav navbar-lang">
-                        <li>
-                            <a href="#">EST</a>
-                        </li>
-                        <li>
-                            <a class="active" href="#">ENG</a>
-                        </li>
-                        <li>
-                            <a href="#">RUS</a>
-                        </li>
-                    </ul>
-                </div>
                 <nav class="mobileNav">
                     <ul class="nav text-center">
                         <li>
-                            <a href="/">Home</a>
+                            <a href="./">Home</a>
                         </li>
                         <?php
                         /*  Display Menus from MySQL Database
@@ -46,13 +33,13 @@ include_once(__DIR__.'./controllers/dbController.php');
                         ?>
 
                         <li>
-                            <a class="<?= ($activePage == 'about') ? 'active':''; ?>" href="about.php">About</a>
+                            <a href="about.php">About</a>
                         </li>
                         <li>
-                            <a class="<?= ($activePage == 'contact') ? 'active':''; ?>" href="contact.php">Contact</a>
+                            <a href="contact.php">Contact</a>
                         </li>
                         <li>
-                            <a class="<?= ($activePage == 'cart') ? 'active':''; ?>"  href="cart.php">Shopping Cart</a>
+                            <a href="cart.php">Shopping Cart</a>
                         </li>
                         <ul class="nav lang">
                             <li>
@@ -74,7 +61,7 @@ include_once(__DIR__.'./controllers/dbController.php');
         </div>
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a href="index.php"><img src="./img/logo.png" class="navbar-brand"/></a>
+            <a href="./"><img src="./img/logo.png" class="navbar-brand"/></a>
             <div class="text-right hidden-xs" style="padding-right: 100px">
                 <!--<div class="shopping-cart">-->
                     <div class="nav languages">
@@ -83,7 +70,7 @@ include_once(__DIR__.'./controllers/dbController.php');
                                 <a href="#">EST</a>
                             </li>
                             <li>
-                                <a class="active" href="#">EN</a>
+                                <a class="active" href="#">ENG</a>
                             </li>
                             <li>
                                 <a href="#">RUS</a>
@@ -101,7 +88,7 @@ include_once(__DIR__.'./controllers/dbController.php');
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav text-center">
                 <li>
-                    <a href="index.php">Home</a>
+                    <a href="./">Home</a>
                 </li>
                 <?php
 
@@ -119,10 +106,10 @@ include_once(__DIR__.'./controllers/dbController.php');
                 }
                 ?>
                 <li>
-                    <a class="<?= ($activePage == 'about') ? 'active':''; ?>" href="about.php">About</a>
+                    <a href="about.php">About</a>
                 </li>
                 <li>
-                    <a class="<?= ($activePage == 'contact') ? 'active':''; ?>" href="contact.php">Contact</a>
+                    <a href="contact.php">Contact</a>
                 </li>
             </ul>
         </div>

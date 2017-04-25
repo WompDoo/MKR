@@ -42,7 +42,7 @@ include('controllers/product_details.php');
                 <div class="carousel slide" id="picCarousel" data-interval="false">
                     <!-- Carousel items -->
                     <div class="carousel-inner">
-                        <?php echo createCarousel(); ?>
+                        <?php createCarousel(); ?>
                     </div><!-- Carousel nav -->
                     <a class="left carousel-control" href="#picCarousel" role="button" data-slide="prev">
                         <span class="glyphicon glyphicon-chevron-left"></span>

@@ -1,4 +1,3 @@
-<!-- Navigation -->
 <?php
 include('header.php');
 ?>

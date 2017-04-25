@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+    //Mobile menu
     $(function () {
         var i = 0;
         $('#mobileMenuLink').on('click', function () {
@@ -24,12 +25,6 @@ $(document).ready(function () {
         });
     });
 
-//Prevent the function to run before the document is loaded
-    document.addEventListener('readystatechange', function () {
-        if (document.readyState === "complete") {
-
-        }
-    });
 
 //ProductCarousel
     $('#picCarousel').carousel({
@@ -45,6 +40,21 @@ $(document).ready(function () {
         $('[id^=carousel-selector-]').removeClass('active');
         $(this).addClass('active');
     });
+
+    //Shopping cart
+    /* $(".item_form").submit(function (e) {
+     var form_data = $(this).serialize();
+     /!* AJAX request  - shoppingCartData.php *!/
+     $.ajax({
+     url: "./../controllers/cart.php",
+     type: "POST",
+     dataType: "json",
+     success: function (data) {
+     console.log(form_data);
+     }
+     })
+     e.preventDefault();
+     });*/
 
 
     //Add stock quantity on admin panel
@@ -71,6 +81,7 @@ $(document).ready(function () {
             dataType: 'text',
             success: function (data) {
                 $("#furniture-dad").load(location.href + " #furniture");
+                console.log(data);
 
             }
         });
@@ -99,20 +110,53 @@ $(document).ready(function () {
             data: $('#newProduct').serialize(),
             dataType: 'text',
             success: function (data) {
-                console.log(data);
                 $("#furniture-dad").load(location.href + " #furniture");
 
             }
         });
     }));
 
+    /*  $(document).on("click", ".btnAddAction", (function () {
+     $.ajax({
+     type: 'POST',
+     url: './controllers/cart.php',
+     data: $('.item_form').serialize(),
+     dataType: 'text',
+     success: function (data) {
+     $("#shopping-cart").load(location.href + " #inCart");
+     //window.location = window.location.href;
+     }
+     });
+     }));*/
+
+    $(".item_form").submit(function (e) {
+        var form_data = $(this).serialize();
+        /* AJAX request  - controllers/cart.php */
+        $.ajax({
+            url: $(this).attr('action'),
+            type: "POST",
+            dataType: "text",
+            data: form_data,
+            success: (function (data) {//if AJAX request if succesful
+            alert("clicked");
+            /* Empty the update info bar before calling it. Otherwise appended content will duplicate. */
+            $('#cart_update_info').empty();
+            /* append data/info to cart_update_info bar */
+            $("#cart_update_info").append("<div id='new_item_added'><i class='glyphicon glyphicon-ok' style='color:green;'></i> Item added to the cart</div>").fadeIn('fast').delay(2000).fadeOut('fast');
+            /* If shopping cart is still open, items will appear on it at the same time of adding them */
+                $("#shopping-cart").load(location.href + " #inCart");
+        })
+        })
+        e.preventDefault();
+    });
+
     //Handle admin nav animations
-    $("#hideNav").click(function(event){
+    $("#hideNav").click(function (event) {
         $("#adminNavbar").hide("slow");
         $("#hiddenBtn").show("slow");
         document.getElementById("navbarRegular").style.paddingTop = "0px";
     });
-    $("#hiddenBtn").click(function(event){
+    $("#hiddenBtn").click(function (event) {
         $("#adminNavbar").show("slow");
         $("#hiddenBtn").hide("slow");
         document.getElementById("navbarRegular").style.paddingTop = "50px";

@@ -164,7 +164,7 @@ include('./../controllers/inventory.php');
                                     <div class="panel-heading">
                                         <h4>
                                             <?php
-                                            echo(fetchCategoryFurn());
+                                            fetchCategoryFurn();
                                             ?>
                                         </h4>
                                     </div>
@@ -188,7 +188,7 @@ include('./../controllers/inventory.php');
                                         </thead>
                                         <tbody>
                                         <?php
-                                        echo(fetchFurniture());
+                                        fetchFurniture();
                                         ?>
                                         </tbody>
                                     </table>

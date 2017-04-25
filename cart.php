@@ -37,7 +37,7 @@ include('./header.php');
                     if (isset($_SESSION["cart_item"])) {
                         $item_total = 0;
                         ?>
-                        <table cellpadding="10" cellspacing="1" class="table table-responsive">
+                        <table id="inCart" cellpadding="10" cellspacing="1" class="table table-responsive">
                             <tbody>
                             <tr>
                                 <th><strong>Name</strong></th>
