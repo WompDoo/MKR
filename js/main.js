@@ -42,20 +42,27 @@ $(document).ready(function () {
     });
 
     //Shopping cart
-    /* $(".item_form").submit(function (e) {
-     var form_data = $(this).serialize();
-     /!* AJAX request  - shoppingCartData.php *!/
-     $.ajax({
-     url: "./../controllers/cart.php",
-     type: "POST",
-     dataType: "json",
-     success: function (data) {
-     console.log(form_data);
-     }
-     })
-     e.preventDefault();
-     });*/
-
+    $(".item_form").submit(function (e) {
+        var form_data = $(this).serialize();
+        /* AJAX request  - controllers/cart.php */
+        $.ajax({
+            url: $(this).attr('action'),
+            type: "POST",
+            dataType: "text",
+            data: form_data,
+            success: (function (data) {//if AJAX request if succesful
+                /* Empty the update info bar before calling it. Otherwise appended content will duplicate. */
+                $('#cart_update_info').empty();
+                /* append data/info to cart_update_info bar */
+                $("#cart_update_info").append("<div id='new_item_added'><i class='glyphicon glyphicon-ok' style='color:green;'></i> Item added to the cart</div>").fadeIn('fast').delay(2000).fadeOut('fast');
+                /* If shopping cart is still open, items will appear on it at the same time of adding them */
+                $("#shopping-cart").load(location.href + " #inCart");
+                $(".cartIcon").removeClass("hidden");
+                $(".cartIcon").addClass("animated fadeIn");
+            })
+        })
+        e.preventDefault();
+    });
 
     //Add stock quantity on admin panel
     $(document).on("click", ".add", (function () {
@@ -128,27 +135,6 @@ $(document).ready(function () {
      }
      });
      }));*/
-
-    $(".item_form").submit(function (e) {
-        var form_data = $(this).serialize();
-        /* AJAX request  - controllers/cart.php */
-        $.ajax({
-            url: $(this).attr('action'),
-            type: "POST",
-            dataType: "text",
-            data: form_data,
-            success: (function (data) {//if AJAX request if succesful
-            alert("clicked");
-            /* Empty the update info bar before calling it. Otherwise appended content will duplicate. */
-            $('#cart_update_info').empty();
-            /* append data/info to cart_update_info bar */
-            $("#cart_update_info").append("<div id='new_item_added'><i class='glyphicon glyphicon-ok' style='color:green;'></i> Item added to the cart</div>").fadeIn('fast').delay(2000).fadeOut('fast');
-            /* If shopping cart is still open, items will appear on it at the same time of adding them */
-                $("#shopping-cart").load(location.href + " #inCart");
-        })
-        })
-        e.preventDefault();
-    });
 
     //Handle admin nav animations
     $("#hideNav").click(function (event) {

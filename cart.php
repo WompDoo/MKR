@@ -1,5 +1,4 @@
 <?php
-include('./controllers/cart.php');
 include('./header.php');
 ?>
     <head>

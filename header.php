@@ -1,8 +1,9 @@
 <?php
-$activePage = basename($_SERVER['PHP_SELF'], ".php");
 include_once(__DIR__.'./controllers/dbController.php');
+include_once(__DIR__.'./controllers/cart.php');
 ?>
 
+<link href="./css/animate.min.css" rel="stylesheet">
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top navfix" role="navigation">
     <div class="container navfix">
@@ -77,10 +78,16 @@ include_once(__DIR__.'./controllers/dbController.php');
                             </li>
                         </ul>
                     </div>
-                    <!--<a href="cart.php" style="position: relative">
+                    <a class="<?php
+                    if (count($_SESSION['cart_item']) > 0) {
+                        echo "cartIcon";
+                    } else {
+                        echo "cartIcon hidden";
+                    }
+                    ?>" href="cart.php" style="position: relative">
                         <img src="./img/shoppingcart.png" width="35" height="35"/>
                     </a>
-                </div>-->
+                </div>
 
             </div>
         </div>
@@ -115,6 +122,4 @@ include_once(__DIR__.'./controllers/dbController.php');
         </div>
         <hr class="navsep"/>
         <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
 </nav>
