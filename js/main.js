@@ -57,14 +57,16 @@ $(document).ready(function () {
                 $("#cart_update_info").append("<div id='new_item_added'><i class='glyphicon glyphicon-ok' style='color:green;'></i> Item added to the cart</div>").fadeIn('fast').delay(2000).fadeOut('fast');
                 /* If shopping cart is still open, items will appear on it at the same time of adding them */
                 $("#shopping-cart").load(location.href + " #inCart");
-                $(".cartIcon").removeClass("hidden");
-                $(".cartIcon").addClass("animated fadeIn");
+                $(".cartIcon").removeClass("hidden").addClass("animated fadeIn");
+                //var itemsInCart = $("#items_in_shopping_cart").val();
+                var n = $("#items_in_shopping_cart").data("qty");
+                $("#items_in_shopping_cart").html(n + 1);
             })
         })
         e.preventDefault();
     });
 
-    //Add stock quantity on admin panel
+      //Add stock quantity on admin panel
     $(document).on("click", ".add", (function () {
         var id = $(this).parents("tr").attr("data-id");
         $.ajax({

@@ -152,10 +152,6 @@ body {
     font-weight: bold;
 }
 
-.hidden {
-    display: none;
-}
-
 #productSlider img {
     width: auto;
     height: 54vmin;

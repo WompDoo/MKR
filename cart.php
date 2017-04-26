@@ -30,7 +30,7 @@ include('./header.php');
     <div class="row">
         <div class="col-md-11 col-md-offset-1">
                 <div id="shopping-cart" class="col-md-8">
-                    <div class="txt-heading"><h2>Shopping Cart </h2><a id="btnEmpty" href="cart.php?action=empty">Empty
+                    <div class="txt-heading"><h2>Shopping Cart</h2><a id="btnEmpty" href="cart.php?action=empty">Empty
                             Cart</a></div>
                     <?php
                     if (isset($_SESSION["cart_item"])) {
