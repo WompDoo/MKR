@@ -1,4 +1,12 @@
-<?php include("./../header.php"); ?>
+<?php include("./../header.php");
+
+if (!isset($_SESSION['myusername'])) {
+    header("Location:./../login/");
+}
+?>
+
+
+?>
 
 
 <!DOCTYPE html>
@@ -16,6 +24,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="./../css/bootstrap.min.css" rel="stylesheet">
+    <link href="./../css/semantic.min.css" rel="stylesheet">
 
     <!-- Custom CSS-->
     <link href="./../css/furniture.css" rel="stylesheet">
@@ -31,6 +40,54 @@
 </head>
 
 <body>
+<button id="hiddenBtn" class="btn btnColor">
+    <i class="glyphicon glyphicon-cog"></i>
+</button>
+
+<nav id="adminNavbar" class="navbar navbar-default navbar-static-top topbar" role="admin">
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+
+            <a href="../admin/" class="navbar-brand">
+                <span class="hidden-xs">MKR Kild<sup>Admin</sup></span>
+            </a>
+            <div class="ui buttons position">
+                <button class="navbar-text ui inverted red button">
+                    <a data-toggle="modal" data-target="#myModal" class="sidebar-toggle">
+                        Background
+                    </a>
+                </button>
+                <button class="navbar-text ui inverted green button">
+                    <a href="admin.php">Dashboard</a>
+                </button>
+
+            </div>
+        </div>
+
+        <div class="navbar-collapse collapse" id="navbar-collapse-main">
+
+
+            <ul class="nav navbar-nav navbar-right">
+
+                <li class="dropdown">
+                    <button class="navbar-btn active" data-toggle="dropdown">
+                        <img src="./../img/logo2.png" class="img-circle">
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="./../login/logout.php">Logout</a></li>
+                        <li><a id="hideNav">Hide</a></li>
+                        <li id="showNav" class="hidden"><a>Show</a></li>
+                    </ul>
+                </li>
+
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
 
 <!-- Page Features -->
 <div class="row text-left">
@@ -75,7 +132,6 @@
             </div>
             <div class="col-md-6">
                 <h4>Name</h4>
-                <br>
                 <text>A few words about the person</text>
             </div>
         </div>
@@ -86,7 +142,6 @@
             </div>
             <div class="col-md-6">
                 <h4>Name</h4>
-                <br>
                 <text>A few words about the person</text>
             </div>
         </div>
@@ -97,7 +152,6 @@
             </div>
             <div class="col-md-6">
                 <h4>Name</h4>
-                <br>
                 <p>A few words about the person</p>
             </div>
         </div>
@@ -116,6 +170,8 @@
 
 <!-- Bootstrap Core JavaScript -->
 <script src="./../js/bootstrap.min.js"></script>
+<script src="./../js/semantic.min.js"></script>
+
 
 <?php include("./../footer.php"); ?>
 

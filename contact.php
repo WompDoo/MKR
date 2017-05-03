@@ -75,7 +75,6 @@
             </div>
             <div class="col-md-6">
                 <h4>Name</h4>
-                <br>
                 <text>A few words about the person</text>
             </div>
         </div>
@@ -86,7 +85,6 @@
             </div>
             <div class="col-md-6">
                 <h4>Name</h4>
-                <br>
                 <text>A few words about the person</text>
             </div>
         </div>
@@ -97,7 +95,6 @@
             </div>
             <div class="col-md-6">
                 <h4>Name</h4>
-                <br>
                 <p>A few words about the person</p>
             </div>
         </div>

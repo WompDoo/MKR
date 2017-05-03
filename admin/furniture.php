@@ -2,6 +2,11 @@
 include('./../header.php');
 include('./../controllers/products.php');
 //include('controllers/modalproduct.php');
+
+if (!isset($_SESSION['myusername'])) {
+    header("Location:./../login/");
+}
+?>
 ?>
 
 <!DOCTYPE html>
@@ -114,7 +119,7 @@ include('./../controllers/products.php');
 <!-- Script to Activate the Carousel -->
 <script src="./../js/carousel.js"></script>
 
-<?php include("footer.php"); ?>
+<?php include("./../footer.php"); ?>
 
 </body>
 

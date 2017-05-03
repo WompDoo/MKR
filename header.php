@@ -5,7 +5,7 @@ include_once(__DIR__ . './controllers/cart.php');
 
 <link href="./css/animate.min.css" rel="stylesheet">
 <!-- Navigation -->
-<nav class="navbar navbar-inverse navbar-fixed-top navfix" role="navigation">
+<nav id="navbarRegular" class="navbar navbar-inverse navbar-fixed-top navfix" role="navigation">
     <div class="container navfix">
         <div id="mobileNav">
             <div class="wrapper">

@@ -23,6 +23,7 @@ include('./../controllers/inventory.php');
     <!-- Bootstrap Core CSS -->
     <link href="./../css/bootstrap.min.css" rel="stylesheet">
     <link href="./../css/semantic.min.css" rel="stylesheet">
+    <link href="./../css/icon.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="./../css/admin.css" rel="stylesheet">
@@ -112,6 +113,9 @@ include('./../controllers/inventory.php');
                 </button>
                 <button class="navbar-text ui inverted orange button">
                     <a href="woodturning.php">Woodturning</a>
+                </button>
+                <button class="navbar-text ui inverted purple button">
+                    <a href="about.php">About</a>
                 </button>
                 <button class="navbar-text ui inverted yellow button">
                     <a href="contact.php">Contact</a>

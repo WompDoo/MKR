@@ -20,9 +20,12 @@ if (!isset($_SESSION['myusername'])) {
     <!-- Bootstrap Core CSS and other frameworks -->
     <link href="./../css/bootstrap.min.css" rel="stylesheet">
     <link href="./../css/semantic.min.css" rel="stylesheet">
+    <link href="./../css/image-picker.css" rel="stylesheet">
 
     <!-- Custom CSS -->
+    <link href="./../css/fix.css" rel="stylesheet">
     <link href="./../css/main.css" rel="stylesheet">
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,6 +33,7 @@ if (!isset($_SESSION['myusername'])) {
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
 
 </head>
 
@@ -47,10 +51,16 @@ if (!isset($_SESSION['myusername'])) {
                 <span class="hidden-xs">MKR Kild<sup>Admin</sup></span>
             </a>
             <div class="ui buttons position">
-                <button class="navbar-text ui inverted red button">
-                    <a data-toggle="modal" data-target="#myModal" class="sidebar-toggle">
+                <button class="navbar-text ui inverted red button" id="showModal">
+                    <a data-toggle="modal" data-target="#myModal" class="sidebar-toggle" value="Background">
                         Background
                     </a>
+                    <button data-toggle="modal" data-target="#myModal" id="closeModal"
+                            class="navbar-text ui inverted red button">
+                        <a>
+                            Close
+                        </a>
+                    </button>
                 </button>
                 <button class="navbar-text ui inverted green button">
                     <a href="admin.php">Dashboard</a>
@@ -119,7 +129,7 @@ if (!isset($_SESSION['myusername'])) {
                                 <a class="lang-sep" href="#">EST</a>
                             </li>
                             <li>
-                                <a class="lang-sep"  href="#">RUS</a>
+                                <a class="lang-sep" href="#">RUS</a>
                             </li>
                         </ul>
                     </ul>
@@ -142,7 +152,7 @@ if (!isset($_SESSION['myusername'])) {
                             <a class="active" href="#">EN</a>
                         </li>
                         <li>
-                            <a  href="#">RUS</a>
+                            <a href="#">RUS</a>
                         </li>
                     </ul>
                 </div>
@@ -203,47 +213,28 @@ if (!isset($_SESSION['myusername'])) {
                                     <div class="form-group">
                                         <input type="file" name="file[]" id="js-upload-files" multiple>
                                     </div>
-                                    <button type="submit" class="ui button inverted blue" id="js-upload-submit"
+                                    <button type="submit" class="ui button inverted blue upload" id="js-upload-submit"
                                             name="submit">Upload files
                                     </button>
                                 </div>
-
-                                <!-- Drop Zone -->
-                                <h4>Või tõsta failid lihtsalt siia</h4>
-                                <div class="upload-drop-zone" id="drop-zone">
-                                    Lohista pilt siia
-                                </div>
                             </form>
-                            <div class="js-upload-finished">
-                                <h3>Üleslaaditud pildid</h3>
-                                <div class="col-md-12 text-center">
-                                    <div class="col-xs-6 col-md-3">
-                                        <img src="https://placeholdit.imgix.net/~text?txtsize=12&txt=259%C3%97375&w=100&h=60"
-                                             alt="bla">
-                                    </div>
-                                    <div class="col-xs-6 col-md-3">
-                                        <img src="https://placeholdit.imgix.net/~text?txtsize=12&txt=259%C3%97375&w=100&h=60"
-                                             alt="bla">
-                                    </div>
-                                    <div class="col-xs-6 col-md-3">
-                                        <img src="https://placeholdit.imgix.net/~text?txtsize=12&txt=259%C3%97375&w=100&h=60"
-                                             alt="bla">
-                                    </div>
-                                    <div class="col-xs-6 col-md-3">
-                                        <img src="https://placeholdit.imgix.net/~text?txtsize=12&txt=259%C3%97375&w=100&h=60"
-                                             alt="bla">
-                                    </div>
+                            <h3>Üleslaaditud pildid</h3>
+                            <div class="js-upload-finished" id="selectablePics-dad">
+                                <div id="selectablePics">
+                                    <select class="image-picker " id="bgPics" data-limit="3" multiple="multiple">
+                                    </select>
+
                                 </div>
+                                <button type="submit" id="changeBG" class="ui button inverted blue text-center
+"
+                                        name="change BG">Change BG
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="ui inverted red button" data-dismiss="modal">Close</button>
-            </div>
         </div>
-
     </div>
 </div>
 
@@ -252,29 +243,10 @@ if (!isset($_SESSION['myusername'])) {
 <header id="myCarousel" class="carousel slide">
 
     <!-- Wrapper for Slides -->
-    <div class="carousel-inner">
-        <div class="item active">
-            <!-- Set the first background image using inline CSS below. -->
-            <div class="fill" style="background-image:url('./../img/moobel.JPG');"></div>
-            <div class="carousel-caption">
-                <!--<h2>Caption 1</h2>-->
-            </div>
-        </div>
-        <div class="item">
-            <!-- Set the second background image using inline CSS below. -->
-            <div class="fill" style="background-image:url('./../img/markmik.JPG');"></div>
-            <div class="carousel-caption">
-                <!--<h2>Caption 1</h2>-->
-            </div>
-        </div>
-        <div class="item">
-            <!-- Set the third background image using inline CSS below. -->
-            <div class="fill" style="background-image:url('./../img/kurikas.JPG');"></div>
-            <div class="carousel-caption">
-                <!--<h2>Caption 1</h2>-->
-            </div>
-        </div>
-
+    <div id="myCarousel-son" class="carousel-inner">
+        <div class="item active"><div class="fill" style="background-image:url('./../img/kurikas.jpg');"></div></div>
+        <div class="item"><div class="fill" style="background-image:url('./../img/markmik.JPG');"></div></div>
+        <div class="item"><div class="fill" style="background-image:url('./../img/moobel.JPG');"></div></div>
     </div>
 
 </header>
@@ -304,14 +276,14 @@ if (!isset($_SESSION['myusername'])) {
 
 <script src="./../js/jquery.js"></script>
 <script src="./../js/main.js"></script>
+<script src="./../js/image-picker.min.js"></script>
+
 
 <!-- Bootstrap Core JavaScript -->
 <script src="./../js/bootstrap.min.js"></script>
 <script src="./../js/semantic.min.js"></script>
 
 <!-- Script to Activate the Carousel -->
-<script src="./../js/carousel.js"></script>
-
 
 </body>
 

@@ -359,9 +359,8 @@ nav[role="admin"] .navbar-text {
 }
 
 nav[role="admin"] .button {
-    margin-right: 5px!important;
+    margin-right: 5px !important;
 }
-
 
 .position {
     padding-top: 6px;
@@ -396,6 +395,7 @@ nav[role="admin"] .navbar-brand {
     padding-top: 50px;
 
 }
+
 #hiddenBtn {
     display: none;
     position: absolute;
@@ -404,8 +404,13 @@ nav[role="admin"] .navbar-brand {
     width: 51px;
     border-radius: 0;
 }
-#hiddenBtn i{
+
+#hiddenBtn i {
     color: white;
+}
+
+#save {
+    display: none;
 }
 
 .btnColor {
@@ -421,17 +426,32 @@ nav[role="admin"] .navbar-brand {
     padding-top: 30px;
 }
 
+#myModal img {
+    width: 100%;
+}
+
 .modal-body, .modal-footer, .panel-body {
     background-color: #1f2021;
 }
 
 .panel-heading {
-    background-color: #2f2f2f!important;
-    color: white!important;
+    background-color: #2f2f2f !important;
+    color: white !important;
 }
 
-#myModal h3,h4 {
+#myModal h3, h4 {
     color: #777;
 }
 
+#closeModal {
+    display: none;
+}
+
+#selectable {
+    border: 1px solid yellow;
+}
+
+.thumbnail {
+    width: 150px;
+}
 

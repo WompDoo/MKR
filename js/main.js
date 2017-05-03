@@ -1,5 +1,11 @@
 $(document).ready(function () {
 
+    $('#myCarousel').carousel({
+        interval: 5000,
+        pause: "false"
+    })
+
+
     //Mobile menu
     $(function () {
         var i = 0;
@@ -150,88 +156,93 @@ $(document).ready(function () {
         document.getElementById("navbarRegular").style.paddingTop = "50px";
     });
 
-// WE NEED IT LATER FOR UPLOADING STUFF
-// $(function () {
-//     'use strict';
-//
-//     // UPLOAD CLASS DEFINITION
-//     // ======================
-//
-//     var dropZone = document.getElementById('drop-zone');
-//     var uploadForm = document.getElementById('js-upload-form');
-//
-//     var startUpload = function (files) {
-//         var i;
-//         for (i = 0; i <= 2; i++) {
-//             var file_data = $('#js-upload-files').prop('files')[i];
-//             console.log(file_data);
-//             var form_data = new FormData();
-//             form_data.append('file', file_data);
-//             $.ajax({
-//                 url: 'upload.php', // point to server-side PHP script
-//                 dataType: 'text',  // what to expect back from the PHP script, if anything
-//                 cache: false,
-//                 contentType: false,
-//                 processData: false,
-//                 data: form_data,
-//                 type: 'post',
-//                 success: function (php_script_response) {
-//                     alert(php_script_response)
-//                 }
-//             });
-//         }
-//         console.log(files);
-//     }
-//
-//     /* var dropLoad = function(files1) {
-//      var file_data = $('#drop-zone').prop('files1')[0];
-//      var form_data = new FormData();
-//      form_data.append('file1', file_data);
-//      alert(form_data);
-//      $.ajax({
-//      url: 'upload.php', // point to server-side PHP script
-//      dataType: 'text',  // what to expect back from the PHP script, if anything
-//      cache: false,
-//      contentType: false,
-//      processData: false,
-//      data: form_data,
-//      type: 'post',
-//      success: function(php_script_response){
-//      alert(php_script_response); // display response from the PHP script, if any
-//      }
-//      });
-//      console.log(files1);
-//      }
-//      */
-//
-//
-//     uploadForm.addEventListener('submit', function (e) {
-//         var uploadFiles = document.getElementById('js-upload-files').files;
-//         e.preventDefault();
-//
-//         startUpload(uploadFiles)
-//     });
-//
-//
-//     dropZone.addEventListener('drop', function (e) {
-//         var uploadFiles = document.getElementById('drop-zone').files;
-//         e.preventDefault();
-//
-//         startUpload(dropLoad)
-//     });
-//
-//
-//     dropZone.ondragover = function () {
-//         this.className = 'upload-drop-zone drop';
-//         return false;
-//     }
-//
-//     dropZone.ondragleave = function () {
-//         this.className = 'upload-drop-zone';
-//         return false;
-//     }
-//
-// });
+//About page edit coded
+    $("#edit").click(function (event) {
+        $("#edit").hide("slow");
+        $("#save").show("slow");
+        document.getElementById("myP").contentEditable = true;
+    });
+    var theContent = $('#myP');
+    $("#save").click(function (event) {
+        $("#save").hide("slow");$( ".hello" ).empty();
+        $("#edit").show("slow");
+        document.getElementById("myP").contentEditable = false;
+        var editedContent = theContent.html();
+        var a = localStorage.newContent = editedContent;
+        $.post('./../controllers/editPage.php', 'val=' + a, function (response) {
+        });
+    });
+// Code for showing modal
+    $("#showModal").click(function (event) {
+        $("#showModal").hide("slow");
+        $("#closeModal").show("slow");
+    });
+
+    $("#closeModal").click(function (event) {
+        $("#closeModal").hide("slow");
+        $("#showModal").show("slow");
+        //$("#myModal").modal(hide);
+    });
+// Init Image_picker JS plugin
+    var initializePlugins = function () {
+        $('.image-picker').imagepicker({
+            limit: 3
+        });
+    };
+// Change background on index page
+    $('#changeBG').on('click', function(){
+        $( "#myCarousel-son" ).empty();
+        var value = $("select").data('picker');
+        var selected = value.select[0].selectedOptions;
+        $(selected).each(function () {
+            var imagelink = this.value;
+            $('#myCarousel-son').prepend('<div class="item"><div class="fill" style="background-image:url(' + imagelink + ');"></div></div>');
+    });
+        $('#myCarousel-son').children(":first").addClass("active");
+    });
+// Upload images for index page
+    $('.upload').on('click', function () {
+        var file_data = $('#js-upload-files').prop('files')[0];
+        var form_data = new FormData();
+        form_data.append('file', file_data);
+        event.preventDefault();
+        $.ajax({
+            url: './../controllers/upload.php', // point to server-side PHP script
+            dataType: 'text',  // what to expect back from the PHP script, if anything
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: form_data,
+            type: 'post',
+            success: function (data) {
+                $("#selectablePics-dad").load(location.href + " #selectablePics");
+                $.ajax({
+                    url: "./../controllers/getImages.php",
+                    dataType: "json",
+                    success: function (data) {
+                        $.each(data, function (i, filename) {
+                            $('#bgPics').prepend('<option data-img-src="' + filename + '" value="' + filename + '"></option>');
+                            initializePlugins();
+                        });
+                    }
+                });
+            }
+        });
+    });
+
+// To display uploaded images
+    $.ajax({
+        url: "./../controllers/getImages.php",
+        dataType: "json",
+        success: function (data) {
+
+            $.each(data, function (i, filename) {
+                $('#bgPics').prepend('<option data-img-src="' + filename + '" value="' + filename + '"></option>');
+                initializePlugins();
+            });
+        }
+    });
+
 
 
     /* WE MIGHT NEED IT ON THE ADMIN PANEL

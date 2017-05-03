@@ -64,11 +64,11 @@ function fetchFurniture()
                                                 $qty    
                                             </td>
                                             <td align=\"center\">
-                                                <a class=\"btn btn-success text-right add\"><em class=\"glyphicon glyphicon-plus\"></em></a>
-                                                <a class=\"btn btn-danger text-right remove \"><em class=\"glyphicon glyphicon-minus\"></em></a>
+                                                <a class=\"ui positive inverted button text-right add\"><em class=\"glyphicon glyphicon-plus\"></em></a>
+                                                <a class=\"ui negative inverted button text-right remove \"><em class=\"glyphicon glyphicon-minus\"></em></a>
                                             </td>
                                             <td align=\"center\">
-                                                <a  class=\"btn btn-danger text-right destroy\"><em class=\"glyphicon glyphicon-trash\"></em></a>
+                                                <a  class=\"ui negative inverted button text-right destroy\"><em class=\"glyphicon glyphicon-trash\"></em></a>
                                             </td>
                                         </tr>
         

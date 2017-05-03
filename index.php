@@ -91,8 +91,6 @@ include('header.php');
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 
-<!-- Script to Activate the Carousel -->
-<script src="js/carousel.js"></script>
 
 
 </body>

@@ -3,17 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <link href="./../css/image-picker.css" rel="stylesheet">
+    <script src="./../js/jquery.js"></script>
+    <script src="./../js/image-picker.js"></script>
 </head>
 <body>
 
-<form action="upload.php" method="post" enctype="multipart/form-data" id="js-upload-form">
-    <div class="form-inline">
-        <div class="form-group">
-            <input type="file" name="filesToUpload" id="js-upload-files" multiple>
-        </div>
-        <button type="submit" class="btn btn-sm btn-primary" id="js-upload-submit" name="submit" >Upload files</button>
-    </div>
-</form>
+<h3>Check it out!</h3>
+<p>
+    <select class='image-picker'>
+        <option data-img-src="../admin/uploads/2977ab95a835b1fe3f993911757e64de.jpg">Pilt</option>
+        <option data-img-src='http://placekitten.com/150/150' value='2'>Cute Kitten 2</option>
+        <option data-img-src='http://placekitten.com/100/150' value='3'>Cute Kitten 3</option>
+        <option data-img-src='http://placekitten.com/450/151' value='4'>Cute Kitten 4</option>
+    </select>
+    <script>
+        $(".image-picker").imagepicker({
+        });
+    </script>
+</p>
+
+
 
 
 </body>
