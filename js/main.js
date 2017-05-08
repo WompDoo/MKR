@@ -72,7 +72,27 @@ $(document).ready(function () {
         e.preventDefault();
     });
 
-      //Add stock quantity on admin panel
+        /* Change item quantity - ADD */
+        $(document).on("click", ".add_itm_qty", function(e){
+            e.preventDefault();
+            var product_code = $(this).attr("product_code");
+            $.getJSON("./controllers/cart.php", {"add_itm_qty":product_code} , function(data){
+                // update specific item quantity on event
+            });
+            $("#shopping-cart").load(location.href + " #shopping-cart-refresh");
+        });
+
+        /* Change item quantity - SUBTRUCT */
+        $(document).on("click", "a.subtruct_itm_qty", function(e){
+            e.preventDefault();
+            var product_code = $(this).attr("product_code");
+            $.getJSON( "./controllers/cart.php", {"subtruct_itm_qty":product_code} , function(data){
+                // update specific item quantity on event
+            });
+            $("#shopping-cart").load(location.href + " #shopping-cart-refresh");
+        });
+
+    //Add stock quantity on admin panel
     $(document).on("click", ".add", (function () {
         var id = $(this).parents("tr").attr("data-id");
         $.ajax({

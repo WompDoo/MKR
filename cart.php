@@ -1,75 +1,73 @@
 <?php
-include('./header.php');
+require_once('./header.php');
 ?>
-    <head>
 
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no"/>
-        <meta name="description" content="">
-        <meta name="author" content="">
+    <title>MKR Kild</title>
+    <link href="./css/furniture.css" rel="stylesheet">
 
-        <title>MKR Kild</title>
 
-        <!-- Bootstrap Core CSS -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Custom CSS -->
-        <link href="./css/main.css" rel="stylesheet">
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
-    </head>
-
-    <body class="container">
-    <div class="row">
-        <div class="col-md-11 col-md-offset-1">
+    <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-11 col-md-offset-1">
+                <div class="txt-heading"><h2>Shopping Cart</h2></div>
                 <div id="shopping-cart" class="col-md-8">
-                    <div class="txt-heading"><h2>Shopping Cart</h2><a id="btnEmpty" href="cart.php?action=empty">Empty
-                            Cart</a></div>
-                    <?php
-                    if (isset($_SESSION["cart_item"])) {
-                        $item_total = 0;
-                        ?>
-                        <table id="inCart" cellpadding="10" cellspacing="1" class="table table-responsive">
-                            <tbody>
-                            <tr>
-                                <th><strong>Name</strong></th>
-                                <th><strong>Quantity</strong></th>
-                                <th><strong>Price</strong></th>
-                                <th><strong>Action</strong></th>
-                            </tr>
-                            <?php
-                            foreach ($_SESSION["cart_item"] as $item) {
-                                ?>
+                    <div id="shopping-cart-refresh">
+                        <?php
+                        if (isset($_SESSION["cart_item"])) {
+                            $item_total = 0;
+                            ?>
+                            <table id="inCart" cellpadding="10" cellspacing="1" class="table table-responsive">
+                                <a id="btnEmpty" href="cart.php?action=empty">Empty
+                                    Cart</a>
+                                <tbody>
                                 <tr>
-                                    <td>
-                                        <strong><?php echo $item["product_name"]; ?></strong></td>
-                                    <td><?php echo $item["quantity"]; ?></td>
-                                    <td><?php echo "€" . $item["product_price"]; ?></td>
-                                    <td><a
-                                                href="cart.php?action=remove&product_code=<?php echo $item["product_code"]; ?>"
-                                                class="btnRemoveAction">Remove Item</a></td>
+                                    <th><strong>Name</strong></th>
+                                    <th><strong>Quantity</strong></th>
+                                    <th><strong>Price</strong></th>
+                                    <th><strong>Action</strong></th>
                                 </tr>
                                 <?php
-                                $item_total += ($item["product_price"] * $item["quantity"]);
-                            }
-                            ?>
+                                foreach ($_SESSION["cart_item"] as $item) {
+                                    ?>
+                                    <tr>
+                                        <td>
+                                            <strong><?php echo $item["product_name"]; ?></strong></td>
+                                        <td class="itemQty">
+                                            <a href='#' class='subtruct_itm_qty quantity_change'
+                                               product_code="<?php echo $item["product_code"]; ?>">-</a>
+                                            <?php echo $item["quantity"]; ?>
+                                            <a href='#' class='add_itm_qty quantity_change'
+                                               product_code="<?php echo $item["product_code"]; ?>">+</a>
+                                        </td>
+                                        <td><?php echo "€" . $item["product_price"] * $item["quantity"]; ?></td>
+                                        <td><a
+                                                    href="cart.php?action=remove&product_code=<?php echo $item["product_code"]; ?>"
+                                                    class="btnRemoveAction">Remove Item</a></td>
+                                    </tr>
+                                    <?php
+                                    $item_total += ($item["product_price"] * $item["quantity"]);
+                                }
+                                ?>
 
-                            <tr>
-                                <td colspan="5" align=right><strong>Total:</strong> <?php echo "€" . $item_total; ?>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <?php
-                    }
-                    ?>
+                                <tr>
+                                    <td colspan="5" align=right><strong>Total:</strong> <?php echo "€" . $item_total; ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="5" align="right">
+                                        <a href='checkOut.php' title="Review Cart and Check Out">
+                                            <button type="button" class="btn checkoutButton">Checkout</button>
+                                        </a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <?php
+                        }
+                        ?>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -1,6 +1,3 @@
 .idea/*
 config.php
-.vendor/*
-vendor/guzzlehttp/guzzle/build/
-vendor/guzzlehttp/guzzle/docs/
-vendor/guzzlehttp/guzzle/tests/
+vendor/*

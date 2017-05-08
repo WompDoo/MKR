@@ -11,13 +11,14 @@ function saveEdits() {
     
     
     
+    
     <div class="row text-center">
         <div class="col-md-8 col-md-offset-2" style="padding-left">
             <h3>Aamesdfsfsn</h3>
         </div>
     </div>
     <div class="col-md-2 col-md-offset-1 text-center" style="padding-right: 90px;">
-        <h2>YAY</h2>
+        <h2>tere maailm</h2>
     </div>
     <hr class="navsep">
     <div class="row text-center">
